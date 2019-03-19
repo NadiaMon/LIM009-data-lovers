@@ -1,4 +1,4 @@
-const STEAM = {
+window.STEAM = {
   "appnews": {
     "appid": 440,
     "newsitems": [{
