@@ -22,36 +22,51 @@ for(let i=0; i<dataSteam.length;i++){
 */
 
 //usando filter para separar data por canales
+//creando función que agrupe el filtrado
 
-const productUpdate= dataSteam.filter((label)=>{
-    return(label.feedlabel === "Product Update");
-})
+const categorias = () => {
 
-console.log(productUpdate);
+  const filtrado = {}
 
-const pcGamer= dataSteam.filter((gamer)=>{
-    return(gamer.feedlabel === "PC Gamer");
-})
+  const productUpdate = dataSteam.filter((label) => {
+      return (label.feedlabel === "Product Update");
+  })
 
-console.log(pcGamer);
+  filtrado.producto = productUpdate;
 
-const euroGamer= dataSteam.filter((euro)=>{
-    return(euro.feedlabel === "Eurogamer");
-})
+  const pcGamer = dataSteam.filter((gamer) => {
+      return (gamer.feedlabel === "PC Gamer");
+  })
 
-console.log(euroGamer);
+  filtrado.gamer = pcGamer;
 
-const tfBlog= dataSteam.filter((blog)=>{
-    return(blog.feedlabel === "TF2 Blog");
-})
+  const euroGamer = dataSteam.filter((euro) => {
+      return (euro.feedlabel === "Eurogamer");
+  })
 
-console.log(tfBlog);
+  filtrado.euro = euroGamer;
 
-const rockPaperShotgun= dataSteam.filter((rock)=>{
-    return(rock.feedlabel === "Rock, Paper, Shotgun");
-})
+  const tfBlog = dataSteam.filter((blog) => {
+      return (blog.feedlabel === "TF2 Blog");
+  })
 
-console.log(rockPaperShotgun);
+  filtrado.blog = tfBlog;
+
+  const rockPaperShotgun = dataSteam.filter((rock) => {
+      return (rock.feedlabel === "Rock, Paper, Shotgun");
+  })
+
+  filtrado.rock = rockPaperShotgun;
+
+  return filtrado;
+}
+
+window.categorias = categorias;
+
+//timestamp convert
+
+console.log(new Date(1540254060 * 1000));
+
 
 
 
