@@ -1,4 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800');
+
 *{
     margin: 0;
     padding: 0;
+}
+
+body{
+ font-family: "Work+Sans", sans-serif;
+ width: 100%;
+}
+
+.encabezado{
+    border: 2px solid #9AD2EA;
+    width: 98%;
+    height: 100px;
+    margin: 2% auto;
+    
+}
+
+.seccion-principal{
+    border: 2px solid #9AD2EA;
+    width: 98%;
+    height: 600px;
+    margin: 2% auto;
+}
+
+.barra-vertical{
+    border: 2px solid #9AD2EA;
+    border-radius: 2px;
+    width: 20%;
+    float: left;
+    margin: 2% 1% auto;
+    height: 200px;
+   
+   
+
+}
+
+.pantalla-muestra{
+    border: 2px solid #9AD2EA;
+    width: 75%;
+    height: 300px;
+    float: left;
+    margin: 2% 1% auto;
+   
+}
+
+.pie-pagina{
+    border: 2px solid #9AD2EA;
+    width: 98%;
+    margin: 2% auto;
+   
+
 }

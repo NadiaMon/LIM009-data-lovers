@@ -65,7 +65,21 @@ window.categorias = categorias;
 
 //timestamp convert
 
-console.log(new Date(1540254060 * 1000));
+const fechaconvertTimestamp = (arr) => {
+
+    for (i = 0; i < arr.length; i++) {
+        let fecha = arr[i]["date"];
+        let convertir = (fecha * 1000);
+
+    }
+    
+
+
+}
+
+// console.log(new Date(1540254060 * 1000));
+
+
 
 
 
