@@ -16,12 +16,7 @@ const addSteam= (noticias) => {
 
 */
 
-
-
-
-
-
-
+const patallaMuestra = document.getElementById('pantalla-muestra');
 
 
 const btnProducto = document.getElementById("btn-product");
@@ -30,11 +25,22 @@ btnProducto.addEventListener("click", () => {
     let nombre = window.categorias();
 
     for (let i = 0; i < nombre.producto.length; i++){
-        // return nombre.producto[i];
-        console.log(nombre.producto[i])
+
+        patallaMuestra.innerHTML += `
+        <div>
+        <h1>${nombre.producto[i].title}</h1>
+        <p>${nombre.producto[i].url}</p>
+        <p>${nombre.producto[i].contents}</p>      
+        </div>
+        `
+        ;
+        
+        //console.log(nombre.producto[i])
     }
 
 })
+
+
 
 const btnGamer = document.getElementById("btn-gamer");
 btnGamer.addEventListener("click", () => {
