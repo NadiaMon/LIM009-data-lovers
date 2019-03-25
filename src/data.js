@@ -108,16 +108,39 @@ console.log(new Date(1540254060 * 1000))
 
 //para ordenar la data por fechas de manera ascendente
 
-const ordenarFechas = dataSteam.sort((a,b) => {
-    let dateA = new Date((a.date) * 1000);
+const fechasAscendente = dataSteam.sort((a,b) => {
+    let dateA = new Date((a.date) * 1000); //convertir el timestamp a milisegundos
     let dateB = new Date((b.date) * 1000);
 
     return dateA - dateB;
 
 })
 
-console.log(ordenarFechas);
+console.log(fechasAscendente);
 
 //para ordenar la data por fechas de manera ascendente
+
+const fechasDescendente = dataSteam.sort((a,b) => {
+    let dateA = new Date((a.date) * 1000);
+    let dateB = new Date((b.date) * 1000);
+
+    return dateB - dateA;
+
+})
+
+console.log(fechasDescendente);
+
+//ordenar los títulos
+
+const ordenandoTitulos = dataSteam.sort((a,b) => {
+    let dateA = new Date((a.date) * 1000);
+    let dateB = new Date((b.date) * 1000);
+
+    return dateB - dateA;
+
+})
+
+console.log(fechasDescendente);
+
 
 
