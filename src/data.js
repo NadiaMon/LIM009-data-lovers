@@ -1,4 +1,4 @@
-const dataSteam = STEAM.appnews.newsitems;
+//const dataSteam = STEAM.appnews.newsitems;
 
 const dataMuestra = (data) => { //nuevo data para mostrar 
     const arr = [];
@@ -48,6 +48,7 @@ const categorias = (data) => { //data = [{ }, { }]
 
 //creando una función que devuelva la fecha de cada noticia
 //fórmula para convertir timestamp new Date(x*1000)
+/*
 
 const fechaconvertTimestamp = (data) => { //data = parametro
 
@@ -58,7 +59,7 @@ const fechaconvertTimestamp = (data) => { //data = parametro
 }
 
 console.log(fechaconvertTimestamp(dataSteam));
-
+*/
 
 
 /*
@@ -140,9 +141,9 @@ console.log(fechasDescendente);
 */
 
 
-window.steam = {  //objeto que contiene todos los metodos
+window.steam = {  //objeto que contiene todos los métodos
     categorias: categorias,
-    fechaconvertTimestamp: fechaconvertTimestamp,
+    //fechaconvertTimestamp: fechaconvertTimestamp,
     dataMuestra: dataMuestra
 
 }
