@@ -1,92 +1,75 @@
-//pintar elementos en el DOM
-// document.getElementById("pantalla-muestra").innerHTML = template();
-//intentar mostrar data
-
 //const dataSteam = STEAM.appnews.newsitems;
- 
-const pintado = document.getElementById("pantalla-muestra");
-
-const noticiaTemplate = (producto) =>{//producto = [{url, titulo, contenido}, {}, {}]
+const nuevaData= steam.dataMuestra(dataSteam); //nueva data filtrada
+const filtrarCategorias= steam.categorias(dataSteam); //aqui llamo a mi data
+const mostrarData = document.getElementById("pantalla-muestra");  //section donde se imprimira la data
+const noticiaTemplate = (data) =>{//data = [{url, titulo, contenido}, {}, {}]
 let news="";
- for(let j=0; j < producto.length; j++){
-    let item = `
-    <p>${producto[j].gid}</p>`;    
-    news+=item;
-} 
+for(let j=0; j < data.length - 5; j++){ //recorre toda la data
+  let item = `
+  <div>
+  <h1>${data[j].title}</h1>
+  <a href="">${data[j].url}</a>
+  <p>${data[j].contents}</p>
+  </div>
+  `
+  ;
+  news+=item;
+}
 return news;
 };
-
-pintado.innerHTML = noticiaTemplate(dataSteam);
-// noticiaTemplate(newsitems);
-
-/*
-
-
-
-const mostrar=document.getElementById("mostrar");
-mostrar.innerHTML=noticiaTemplate(dataSteam);
-
-
+mostrarData.innerHTML = noticiaTemplate(dataSteam);
+//funcion para el boton de filtrado
 const btnProducto = document.getElementById("btn-product");
 btnProducto.addEventListener("click", () => {
-    pintado.innerHTML = "";
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.producto.length; i++){
-        // return nombre.producto[i];
-       pintado.insertAdjacentHTML('beforeend',noticia);
-    }
-console.log(nombre.producto)
+   let nombre = window.categorias();
+   for (let i = 0; i < nombre.producto.length; i++){
+       patallaMuestra.innerHTML += `
+       <div>
+       <h1>${nombre.producto[i].title}</h1>
+       <p>${nombre.producto[i].url}</p>
+       <p>${nombre.producto[i].contents}</p>
+       </div>
+       `
+       ;
+       console.log(nombre.producto[i])
+   }
 })
-
 const btnGamer = document.getElementById("btn-gamer");
 btnGamer.addEventListener("click", () => {
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.gamer.length; i++){
-        // return nombre.gamer[i];
-        console.log(nombre.gamer[i])
-    }
-
+   let nombre = window.categorias();
+   for (let i = 0; i < nombre.gamer.length; i++){
+       // patallaMuestra.innerHTML += `
+       // <div>
+       // <h1>${nombre.gammer[i].title}</h1>
+       // <p>${nombre.gamer[i].url}</p>
+       // <p>${nombre.gamer[i].contents}</p>
+       // </div>
+       // `
+       // ;
+       console.log(nombre.gamer[i])
+   }
 })
-
 const btnEuro = document.getElementById("btn-euro");
 btnEuro.addEventListener("click", () => {
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.euro.length; i++){
-        // return nombre.gamer[i];
-        console.log(nombre.euro[i])
-    }
-
+   let nombre = window.categorias();
+   for (let i = 0; i < nombre.euro.length; i++){
+       // return nombre.gamer[i];
+       console.log(nombre.euro[i])
+   }
 })
-
 const btnBlog = document.getElementById("btn-blog");
 btnBlog.addEventListener("click", () => {
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.blog.length; i++){
-        // return nombre.gamer[i];
-        console.log(nombre.blog[i])
-    }
-
+   let nombre = window.categorias();
+   for (let i = 0; i < nombre.blog.length; i++){
+       // return nombre.gamer[i];
+       console.log(nombre.blog[i])
+   }
 })
-
 const btnRock = document.getElementById("btn-rock");
 btnRock.addEventListener("click", () => {
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.rock.length; i++){
-        // return nombre.gamer[i]
-        console.log(nombre.rock[i])
-    }
-
+   let nombre = window.categorias();
+   for (let i = 0; i < nombre.rock.length; i++){
+       // return nombre.gamer[i]
+       console.log(nombre.rock[i])
+   }
 })
-
-
-*/
