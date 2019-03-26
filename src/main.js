@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //const dataSteam = STEAM.appnews.newsitems;
 const nuevaData= steam.dataMuestra(dataSteam); //nueva data filtrada
 const filtrarCategorias= steam.categorias(dataSteam); //aqui llamo a mi data
