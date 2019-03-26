@@ -10,7 +10,7 @@ const example = () => {
 window.example = example;
 */
 
-const dataSteam = STEAM.appnews.newsitems;
+//const dataSteam = STEAM.appnews.newsitems;
 
 /*
 
@@ -23,6 +23,7 @@ for(let i=0; i<dataSteam.length;i++){
 
 //usando filter para separar data por canales
 //creando función que agrupe el filtrado
+/*
 
 const categorias = () => {
 
@@ -79,7 +80,7 @@ const fechaconvertTimestamp = () => {
    }
 }
 
-*/
+
 
 
 console.log(new Date(1542738000 * 1000))
@@ -142,5 +143,5 @@ const ordenandoTitulos = dataSteam.sort((a,b) => {
 
 console.log(fechasDescendente);
 
-
+*/
 

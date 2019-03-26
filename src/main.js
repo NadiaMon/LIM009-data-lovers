@@ -1,17 +1,30 @@
 //pintar elementos en el DOM
 // document.getElementById("pantalla-muestra").innerHTML = template();
 //intentar mostrar data
+
+//const dataSteam = STEAM.appnews.newsitems;
  
 const pintado = document.getElementById("pantalla-muestra");
 
-const noticiaTemplate = (producto) =>{
-    return`
-    <a href ="${producto.url}" target="_blank" class="titulo-noticia">${producto.title}</a>
-    <p>${producto.author}</p>
-    <p>${producto.contents}</p>
+const noticiaTemplate = (producto) =>{//producto = [{url, titulo, contenido}, {}, {}]
+let news="";
+ for(let j=0; j < producto.length; j++){
+    let item = `
+    <p>${producto[j].gid}</p>`;    
+    news+=item;
+} 
+return news;
+};
 
-    `;
-}
+pintado.innerHTML = noticiaTemplate(dataSteam);
+// noticiaTemplate(newsitems);
+
+/*
+
+
+
+const mostrar=document.getElementById("mostrar");
+mostrar.innerHTML=noticiaTemplate(dataSteam);
 
 
 const btnProducto = document.getElementById("btn-product");
@@ -76,3 +89,4 @@ btnRock.addEventListener("click", () => {
 })
 
 
+*/
