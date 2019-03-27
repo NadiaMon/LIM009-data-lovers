@@ -1,4 +1,4 @@
-//const dataSteam = STEAM.appnews.newsitems;
+const dataSteam = STEAM.appnews.newsitems;
 
 const dataMuestra = (data) => { //nuevo data para mostrar
    const arr = [];

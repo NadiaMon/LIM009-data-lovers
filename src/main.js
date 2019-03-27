@@ -1,169 +1,53 @@
-//const dataSteam = STEAM.appnews.newsitems;
-const nuevaData= steam.dataMuestra(dataSteam); //nueva data filtrada
 const filtrarCategorias= steam.categorias(dataSteam); //aqui llamo a mi data
 const mostrarData = document.getElementById("pantalla-muestra");  //section donde se imprimira la data
+
 const noticiaTemplate = (data) =>{//data = [{url, titulo, contenido}, {}, {}]
-let news="";
-for(let j=0; j < data.length - 5; j++){ //recorre toda la data
-  let item = `
-  <div>
-  <h1>${data[j].title}</h1>
-  <a href="">${data[j].url}</a>
-  <p>${data[j].contents}</p>
-  </div>
-  `
-  ;
-  news+=item;
-}
-return news;
+    let item = `
+        <a href="${data.url}" target="_blank" class="titulo-noticia">${data.title}</a>
+        <p>${data.author}</p>
+        <p>${data.contents}</p>
+    `;
 
-const dataSteam = STEAM.appnews.newsitems;
-const nuevaData = steam.dataMuestra(dataSteam); //nueva data filtrada
-const filtrarCategorias = steam.categorias(dataSteam); //aqui llamo a mi data
-const mostrarData = document.getElementById("pantalla-muestra");  //section donde se imprimira la data
-
-const noticiaTemplate = (data) => {//data = [{url, titulo, contenido}, {}, {}]
-    let news = "";
-    for (let j = 0; j < data.length - 5; j++) { //recorre toda la data
-        let item = `
-   <div>
-   <h1>${data[j].title}</h1>
-   <a href="">${data[j].url}</a>
-   <p>${data[j].contents}</p>
-   </div>
-   `
-            ;
-        news += item;
-    }
-    return news;
-
+    return item;
 };
-mostrarData.innerHTML = noticiaTemplate(dataSteam);
-
-//funcion para el boton de filtrado
-const btnProducto = document.getElementById("btn-product");
-btnProducto.addEventListener("click", () => {
-   let nombre = window.categorias();
-   for (let i = 0; i < nombre.producto.length; i++){
-       patallaMuestra.innerHTML += `
-       <div>
-       <h1>${nombre.producto[i].title}</h1>
-       <p>${nombre.producto[i].url}</p>
-       <p>${nombre.producto[i].contents}</p>
-       </div>
-       `
-       ;
-       console.log(nombre.producto[i])
-   }
-
-//////////////////////
-
 //funcion para el boton de filtrado
 
-const btnProducto = document.getElementById("btn-product");
-btnProducto.addEventListener("click", () => {
-
-    let nombre = steam.categorias(dataSteam);
-
-    for (let i = 0; i < nombre.producto.length; i++){
-        mostrarData.innerHTML += `
-        <div>
-        <h1>${nombre.producto[i].title}</h1>
-        <p>${nombre.producto[i].url}</p>
-        <p>${nombre.producto[i].contents}</p>      
-        </div>
-        `
-        ;
-        
-        console.log(nombre.producto[i])
+const pintarNoticias = (noticias) => {
+    mostrarData.innerHTML = "";
+    for (let i = 0; i < noticias.length; i++){
+        const noticia = noticiaTemplate(noticias[i])
+        mostrarData.insertAdjacentHTML('beforeend', noticia);
     }
+}
 
+const init = () => {
+    pintarNoticias(dataSteam);
+}
+
+const btnProducto = document.getElementById("btn-product");
+btnProducto.addEventListener("click", () => {
+    pintarNoticias(filtrarCategorias.producto);
 })
+
 const btnGamer = document.getElementById("btn-gamer");
 btnGamer.addEventListener("click", () => {
-
-   let nombre = window.categorias();
-   for (let i = 0; i < nombre.gamer.length; i++){
-       // patallaMuestra.innerHTML += `
-       // <div>
-       // <h1>${nombre.gammer[i].title}</h1>
-       // <p>${nombre.gamer[i].url}</p>
-       // <p>${nombre.gamer[i].contents}</p>
-       // </div>
-       // `
-       // ;
-       console.log(nombre.gamer[i])
-   }
-
-    let nombre = steam.categorias();
-
-    for (let i = 0; i < nombre.gamer.length; i++) {
-        // patallaMuestra.innerHTML += `
-        // <div>
-        // <h1>${nombre.gammer[i].title}</h1>
-        // <p>${nombre.gamer[i].url}</p>
-        // <p>${nombre.gamer[i].contents}</p>      
-        // </div>
-        // `
-        // ;
-
-        console.log(nombre.gamer[i])
-    }
-
-
+    pintarNoticias(filtrarCategorias.gamer);
 })
+
+
 const btnEuro = document.getElementById("btn-euro");
 btnEuro.addEventListener("click", () => {
-
-   let nombre = window.categorias();
-   for (let i = 0; i < nombre.euro.length; i++){
-       // return nombre.gamer[i];
-       console.log(nombre.euro[i])
-   }
-
-
-    let nombre = steam.categorias();
-
-    for (let i = 0; i < nombre.euro.length; i++) {
-        // return nombre.gamer[i];
-        console.log(nombre.euro[i])
-    }
-
-
+    pintarNoticias(filtrarCategorias.euro);
 })
+
 const btnBlog = document.getElementById("btn-blog");
 btnBlog.addEventListener("click", () => {
-
-   let nombre = window.categorias();
-   for (let i = 0; i < nombre.blog.length; i++){
-       // return nombre.gamer[i];
-       console.log(nombre.blog[i])
-   }
-
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.blog.length; i++) {
-        // return nombre.gamer[i];
-        console.log(nombre.blog[i])
-    }
-
-
+    pintarNoticias(filtrarCategorias.blog);
 })
+
 const btnRock = document.getElementById("btn-rock");
 btnRock.addEventListener("click", () => {
-
-   let nombre = window.categorias();
-   for (let i = 0; i < nombre.rock.length; i++){
-       // return nombre.gamer[i]
-       console.log(nombre.rock[i])
-   }
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.rock.length; i++) {
-        // return nombre.gamer[i]
-        console.log(nombre.rock[i])
-    }
-
+    pintarNoticias(filtrarCategorias.rock);
 })
+
+init();
