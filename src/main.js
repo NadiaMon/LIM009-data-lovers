@@ -1,104 +1,95 @@
-const dataSteam = STEAM.appnews.newsitems;
-const nuevaData = steam.dataMuestra(dataSteam); //nueva data filtrada
-const filtrarCategorias = steam.categorias(dataSteam); //aqui llamo a mi data
+const filtrarCategorias= steam.categorias(dataSteam); //[{}]//devuelve un objeto donde cada atributo es un array no noticias por categoria
 const mostrarData = document.getElementById("pantalla-muestra");  //section donde se imprimira la data
+const nombreFecha= document.getElementById("ordenar-fecha");
+let noticiasMostradas = [];
 
-const noticiaTemplate = (data) => {//data = [{url, titulo, contenido}, {}, {}]
-    let news = "";
-    for (let j = 0; j < data.length - 5; j++) { //recorre toda la data
-        let item = `
-   <div>
-   <h1>${data[j].title}</h1>
-   <a href="">${data[j].url}</a>
-   <p>${data[j].contents}</p>
-   </div>
-   `
-            ;
-        news += item;
-    }
-    return news;
+//El pedacito de html de la noticia a mostrar
+const noticiaTemplate = (data) =>{//data = [{url, titulo, contenido}, {}, {}]
+    let item = `
+        <div id="noticia">
+            <a href="${data.url}" target="_blank" class="titulo-noticia">${data.title}</a>
+            <p>${data.author}</p>
+            <p>${data.contents}</p>
+        </div>
+    `;
+
+    return item;
 };
 
-mostrarData.innerHTML = noticiaTemplate(dataSteam);
+const mostrarNoticiasOrdenado = (noticias) => {
+    //variable para guardar las noticiar ordenadas por fecha para luwego mostrarlas
+    let noticiasOrden = [];
+      
+    //nombreFecha.value devuelve el valor del desplegable en el html
+    //verificar el tipo de orden por hacer
+    if (nombreFecha.value == 'opcion1') {
+        //ordenar de recientes
+        noticiasOrden = steam.fechasDescendente(noticias)
+    }
+    else {
+         //ordenar de pasada
+         noticiasOrden = steam.fechasAscendente(noticias)
+    }
+    pintarNoticias(noticiasOrden);
+}
 
-//////////////////////
+nombreFecha.addEventListener("change",()=>{
+   mostrarNoticiasOrdenado(noticiasMostradas)
+})
 
 //funcion para el boton de filtrado
+const pintarNoticias = (noticias) => {
+    noticiasMostradas = noticias;
+    //elimina las  noticias anteriores y me muestra las que selecciono
+    mostrarData.innerHTML = "";
+
+    //por cada noticia
+    for (let i = 0; i < noticias.length; i++){
+        //obtiene el html de la noticia
+        const noticia = noticiaTemplate(noticias[i])
+
+        //pinta el html En la pagina 
+        //inserta el html de la noticia al final de la pagina
+        mostrarData.insertAdjacentHTML('beforeend', noticia);
+    }
+}
+
+//primera carga
+const init = () => {
+    mostrarNoticiasOrdenado(dataSteam);
+}
 
 const btnProducto = document.getElementById("btn-product");
+
 btnProducto.addEventListener("click", () => {
-
-    let nombre = steam.categorias(dataSteam);
-
-    for (let i = 0; i < nombre.producto.length; i++){
-        mostrarData.innerHTML += `
-        <div>
-        <h1>${nombre.producto[i].title}</h1>
-        <p>${nombre.producto[i].url}</p>
-        <p>${nombre.producto[i].contents}</p>      
-        </div>
-        `
-        ;
-        
-        console.log(nombre.producto[i])
-    }
-
+    mostrarNoticiasOrdenado(filtrarCategorias.producto);
 })
 
 const btnGamer = document.getElementById("btn-gamer");
 btnGamer.addEventListener("click", () => {
-
-    let nombre = steam.categorias();
-
-    for (let i = 0; i < nombre.gamer.length; i++) {
-        // patallaMuestra.innerHTML += `
-        // <div>
-        // <h1>${nombre.gammer[i].title}</h1>
-        // <p>${nombre.gamer[i].url}</p>
-        // <p>${nombre.gamer[i].contents}</p>      
-        // </div>
-        // `
-        // ;
-
-        console.log(nombre.gamer[i])
-    }
-
+    mostrarNoticiasOrdenado(filtrarCategorias.gamer);
 })
+
 
 const btnEuro = document.getElementById("btn-euro");
 btnEuro.addEventListener("click", () => {
-
-    let nombre = steam.categorias();
-
-    for (let i = 0; i < nombre.euro.length; i++) {
-        // return nombre.gamer[i];
-        console.log(nombre.euro[i])
-    }
-
+    mostrarNoticiasOrdenado(filtrarCategorias.euro);
 })
 
 const btnBlog = document.getElementById("btn-blog");
 btnBlog.addEventListener("click", () => {
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.blog.length; i++) {
-        // return nombre.gamer[i];
-        console.log(nombre.blog[i])
-    }
-
+    mostrarNoticiasOrdenado(filtrarCategorias.blog);
 })
 
 const btnRock = document.getElementById("btn-rock");
 btnRock.addEventListener("click", () => {
-
-    let nombre = window.categorias();
-
-    for (let i = 0; i < nombre.rock.length; i++) {
-        // return nombre.gamer[i]
-        console.log(nombre.rock[i])
-    }
-
+    mostrarNoticiasOrdenado(filtrarCategorias.rock);
 })
 
+init();
 
+
+
+ 
+
+ 
