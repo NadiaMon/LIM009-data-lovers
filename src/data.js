@@ -1,6 +1,7 @@
 const dataSteam = STEAM.appnews.newsitems;
 
-const dataMuestra = (data) => { /*nueva data para mostrar*/ 
+/*nueva data para mostrar en primera pantalla*/ 
+const dataMuestra = (data) => { 
     const arr = [];
     for (let i = 0; i < data.length; i++) {
         arr.push({ title: data[i].title, url: data[i].url, contents: data[i].contents });
@@ -13,8 +14,8 @@ const categorias = (data) => { /*data = [{ }, { }]*/
 
     const filtrado = {};
 
-    const productUpdate = data.filter((label) => { /*filter por canales*/
-        return (label.feedlabel === "Product Update");
+    const productUpdate = data.filter((producto) => { /*filter por canales*/
+        return (producto.feedlabel === "Product Update");
     })
 
     filtrado.producto = productUpdate; /*propiedad:value que se agregan a filtrado*/
@@ -45,6 +46,7 @@ const categorias = (data) => { /*data = [{ }, { }]*/
 
     return filtrado;
 }
+
 /*funcion ordenando fechas*/
 
 const ordenandoFechas = (data, cond) => {
@@ -68,17 +70,10 @@ const ordenandoFechas = (data, cond) => {
 }
 
 console.log(ordenandoFechas(dataSteam,"ASC"));
-console.log(ordenandoFechas(dataSteam,"DESC"));
+console.log(ordenandoFechas(dataSteam,"DESC")); //revisar
 
-/*
-//ascendente
-console.log(dataSteam.sort(ordenandoFechas))
 
-//descendente
-console.log(dataSteam.sort(ordenandoFechas).reverse())
-*/
-
-window.steam = {  //objeto que contiene todos los métodos
+window.steam = {  /*objeto que contiene todos los métodos*/
     dataMuestra: dataMuestra,
     categorias: categorias,
     ordenandoFechas: ordenandoFechas
