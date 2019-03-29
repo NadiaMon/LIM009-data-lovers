@@ -47,8 +47,9 @@ const categorias = (data) => { //data = [{ }, { }]
 }
 
 
-const ordenandoFechas = (data) => {
-    let dateA = new Date((data.date) * 1000);
+
+/*
+let dateA = new Date((data.date) * 1000);
     let dateB = new Date((data.date) * 1000);
 
     if (dateA > dateB) {
@@ -57,13 +58,40 @@ const ordenandoFechas = (data) => {
         return -1;
     }
 }
+*/
 
+const ordenandoFechas = (data, cond) => {
+    function ascendente(a,b){ 
+        a = new Date((a.date) * 1000);
+        b = new Date((b.date) * 1000);
+
+        if (a > b) {
+            return 1;
+        } else if (b < a) {
+            return -1;
+        } else if (a === b) {
+            return 0;
+        }
+    }
+    if (cond === "ASC") {      
+        return data.sort(ascendente);   
+    }else if(cond === "DESC"){
+        return data.sort(ascendente).reverse();
+    }
+}
+
+console.log(ordenandoFechas(dataSteam,"DESC"))
+
+ 
+
+
+/*
 //ascendente
 console.log(dataSteam.sort(ordenandoFechas))
 
 //descendente
 console.log(dataSteam.sort(ordenandoFechas).reverse())
-
+*/
 
 window.steam = {  //objeto que contiene todos los métodos
     dataMuestra: dataMuestra,
