@@ -1,6 +1,6 @@
 const dataSteam = STEAM.appnews.newsitems;
 
-const dataMuestra = (data) => { //nueva data para mostrar 
+const dataMuestra = (data) => { /*nueva data para mostrar*/ 
     const arr = [];
     for (let i = 0; i < data.length; i++) {
         arr.push({ title: data[i].title, url: data[i].url, contents: data[i].contents });
@@ -8,16 +8,16 @@ const dataMuestra = (data) => { //nueva data para mostrar
     return arr;
 }
 
-//// filtrado por categorías
-const categorias = (data) => { //data = [{ }, { }]
+/*filtrado por categorías*/
+const categorias = (data) => { /*data = [{ }, { }]*/
 
     const filtrado = {};
 
-    const productUpdate = data.filter((label) => { //usando filter para separar data por canales
+    const productUpdate = data.filter((label) => { /*filter por canales*/
         return (label.feedlabel === "Product Update");
     })
 
-    filtrado.producto = productUpdate; //propiedad:value que se agregan a filtrado
+    filtrado.producto = productUpdate; /*propiedad:value que se agregan a filtrado*/
 
     const pcGamer = data.filter((gamer) => {
         return (gamer.feedlabel === "PC Gamer");
@@ -45,20 +45,7 @@ const categorias = (data) => { //data = [{ }, { }]
 
     return filtrado;
 }
-
-
-
-/*
-let dateA = new Date((data.date) * 1000);
-    let dateB = new Date((data.date) * 1000);
-
-    if (dateA > dateB) {
-        return 1;
-    } else if (dateA < dateB) {
-        return -1;
-    }
-}
-*/
+/*funcion ordenando fechas*/
 
 const ordenandoFechas = (data, cond) => {
     function ascendente(a,b){ 
@@ -80,10 +67,8 @@ const ordenandoFechas = (data, cond) => {
     }
 }
 
-console.log(ordenandoFechas(dataSteam,"DESC"))
-
- 
-
+console.log(ordenandoFechas(dataSteam,"ASC"));
+console.log(ordenandoFechas(dataSteam,"DESC"));
 
 /*
 //ascendente
