@@ -2,6 +2,8 @@
 const nuevaData = steam.dataMuestra(dataSteam); //nueva data filtrada
 const filtrarCategorias = steam.categorias(dataSteam); //aqui llamo a mi data
 const mostrarData = document.getElementById("pantalla-muestra");  //section donde se imprimira la data
+const nombreFecha= document.getElementById("ordenar-fecha");
+let noticiasMostradas = [];
 
 const noticiaTemplate = (data) => {//data = [{url, titulo, contenido}, {}, {}]
   let news = "";
@@ -137,6 +139,7 @@ btnGamer.addEventListener("click", () => { //esto es un evento
 
 })
 
+
 const btnEuro = document.getElementById("btn-euro");
 btnEuro.addEventListener("click", () => {
 
@@ -183,6 +186,8 @@ btnBlog.addEventListener("click", () => {
 
 const btnRock = document.getElementById("btn-rock");
 btnRock.addEventListener("click", () => {
+    mostrarNoticiasOrdenado(filtrarCategorias.rock);
+})
 
   let nombre = steam.categorias(dataSteam);
 
@@ -201,6 +206,5 @@ btnRock.addEventListener("click", () => {
     console.log(nombre.rock[i])
   }
 
-})
 
 */
