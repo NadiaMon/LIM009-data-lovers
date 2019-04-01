@@ -2,9 +2,9 @@
 
 ## ÍNDICE
 
-* [Acerca de](#acerca-de)
-* [Resumen del proyeto](#resumen-del-proyecto)
-* [Proceso de diseño](#proceso-de-diseño)
+* [Acerca de](#ACERCA-DE)
+* [Resumen del proyeto](#RESUMEN-DEL-PROYETO)
+* [Proceso de diseño](#PROCESO-DE-DISEÑO)
 
 ***
 
@@ -25,3 +25,27 @@ información aún más relevante para los usuarios (promedio, el valor máximo o
 
 # PROCESO DE DISEÑO
 
+![proceso diseño](src/img/proceso.png)
+
+## Descubrimiento e investigación
+
+## ¿Quiénes son los principales usuarios de nuestro producto?
+
+Nuestro público objetivo principal son personas de 20 a 30 años. Que se encuentran estudiando o trabajando. Son personas que se mantienen ocupadas y en sus ratos libres buscan distraerse jugando videojuegos o juegos en línea.
+
+Algunas características de nuestro público:
+
+* Si bien hay un rango de edades para el público objetivo principal, la página y el uso, la compra de los juegos, 
+o el acceso a la información está abierta a cualquier tipo de público interesado en los videojuegos. Por lo que se pensó en una interfaz que tome en consideración todas las necesidades. 
+
+* La interfaz de noticias debe ser amigable e intuitiva, debe tener mostrar el menú de manera clara y no mostrar información que pueda confundir al usuario. Se usaron colores de la gama de Steam y se jerarquizó la información, para hacer más ordenado todo. 
+
+
+***
+## Síntesis y definición
+
+***
+## Ideación
+
+***
+## Prototipado y User testing
