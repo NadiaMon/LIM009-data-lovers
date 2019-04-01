@@ -57,7 +57,7 @@ Entre las preguntas que realizamos, rescatamos estas:
 
 * ¿Con qué frecuencia visitas la página de STEAM?
 
-![frecuencia](src/img/frecuencia.jpg)
+![frecuencia](src/img/frecuencia.PNG)
 
 Descubrimos que al menos una vez al mes, los usuarios suelen visitar la página. Cuándo les preguntamos a qué se debía esto, la respuesta fue que para ellos era importante enterarse de las novedades, o conectarse a la comunidad. Y que visitarían la página, si tuvieran más tiempo. 
 
