@@ -19,7 +19,7 @@ Steam es una plataforma de distribución digital, gestión digital de derechos, 
 
 # RESUMEN DEL PROYETO
 
-En este proyecto **construirás una_página web_ para visualizar un_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario necesite.
+En este proyecto **construirás una página web para visualizar un conjunto (set) de datos** que se adecúe a lo que descubras que tu usuario necesite.
 
 Como entregable final tendrás una página web que permita **visualizar la data, filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado nos referimos a distintos cálculos que puedes hacer con la data para mostrar
 información aún más relevante para los usuarios (promedio, el valor máximo o mel ínimo, etc).
@@ -38,7 +38,7 @@ El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos 
 
 Nuestro público objetivo principal son personas de 20 a 30 años. Que se encuentran estudiando o trabajando. Son personas que se mantienen ocupadas y en sus ratos libres buscan distraerse jugando videojuegos o juegos en línea.
 
-Algunas características de nuestro público:
+**Algunas características de nuestro público:**
 
 * Si bien hay un rango de edades para el público objetivo principal, la página y el uso, la compra de los juegos, 
 o el acceso a la información está abierta a cualquier tipo de público interesado en los videojuegos. Por lo que se pensó en una interfaz que tome en consideración todas las necesidades. 
@@ -84,7 +84,7 @@ Para definir las historias de nuestros usuarios,decidimos enfocarnos en las nece
 
 En base a todo esto, formulamos las siguientes historias:
 
-1. Yo como usuario quiero ver todas las noticias al ingresar a la página
+**1. Yo como usuario quiero ver todas las noticias al ingresar a la página**
 
 *Definición de terminado:*
 - Crear estructura HTML
@@ -96,7 +96,7 @@ En base a todo esto, formulamos las siguientes historias:
 - Usar template literal para ordenar la data que se muestra (cómo hacer una tabla)
 - Pintar en el DOM las noticias
 
-2. Yo como usuario quiero buscar/filtrar las noticias por autor/categoría
+**2. Yo como usuario quiero buscar/filtrar las noticias por autor/categoría**
 
 *Definición de terminado:*
 - Definir categorías a filtrarse, según las propiedades de nuestra data
@@ -108,7 +108,7 @@ En base a todo esto, formulamos las siguientes historias:
 - Crear función que use addEventListener y llame a la data por categorías
 - Usar template literal para mostrar en el DOM
 
-3. Yo como usuario quiero ordenar las noticias por fechas para poder leer temas actuales (actual a antigua)
+**3. Yo como usuario quiero ordenar las noticias por fechas para poder leer temas actuales (actual a antigua)**
 
 *Definición de terminado:*
 - Definir entre select o un botón, etc.
