@@ -33,7 +33,7 @@ El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos 
 
 ![proceso diseño](src/img/proceso.png)
 
-# * Descubrimiento e investigación
+# Descubrimiento e investigación
 
 ## ¿Quiénes son los principales usuarios de nuestro producto?
 
@@ -48,7 +48,7 @@ o el acceso a la información está abierta a cualquier tipo de público interes
 
 ***
 
-# * Síntesis y definición
+# Síntesis y definición
 
 ## Encuesta
 
@@ -80,7 +80,7 @@ La siguiente pregunta, para los usuarios que sabían de la existencia de la secc
 Al preguntar cómo suelen buscar la información, respondieron que se les haría fácil si fuera por categorías(etiquetas).
 
 ***
-# * Ideación
+# Ideación
 
 ***
-# * Prototipado y User testing
+# Prototipado y User testing
