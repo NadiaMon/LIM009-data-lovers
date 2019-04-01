@@ -1,10 +1,10 @@
-#DATA STEAM
+# DATA STEAM
 
-##ÍNDICE
+## ÍNDICE
 
-*[Acerca de](#acerca-de)
-*[Resumen del proyeto](#resumen-del-proyecto)
-*[Proceso de diseño](#proceso-de-diseño)
+* [Acerca de](#acerca-de)
+* [Resumen del proyeto](#resumen-del-proyecto)
+* [Proceso de diseño](#proceso-de-diseño)
 
 ***
 
