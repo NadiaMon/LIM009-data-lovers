@@ -124,3 +124,17 @@ En base a todo esto, formulamos las siguientes historias:
 
 ***
 # Prototipado y User testing
+
+En base a las historias de usuarios se creó un primer prototipo, de baja fidelidad a mano.
+
+**Primer prototipo**
+
+![visitas](src/img/prototipos.png)
+
+*Primer testeo*
+
+La primera foto es un sketch rápido de lo que sería el primer prototipo. Cuando testeamos este prototipo, nos dimos cuenta que no era intuitivo para todos ellos. Algunos pensaban que aún estaban en la página principal, la imagen banner les parecía lo principal y no las noticias. No entendían muy bien los botones de categorías. Confundían las categorías con las etiquetas y les el menú de archivo, a muchos les parecía demás porque no solían buscar la información de esa manera.
+
+**Segundo prototipo**
+
+*Segundo testeo*
