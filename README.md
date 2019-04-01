@@ -127,14 +127,16 @@ En base a todo esto, formulamos las siguientes historias:
 
 En base a las historias de usuarios se creó un primer prototipo, de baja fidelidad a mano.
 
-**Primer prototipo**
-
-![visitas](src/img/prototipos.png)
+![prototipo1](src/img/prototipos.png)
 
 *Primer testeo*
 
 La primera foto es un sketch rápido de lo que sería el primer prototipo. Cuando testeamos este prototipo, nos dimos cuenta que no era intuitivo para todos ellos. Algunos pensaban que aún estaban en la página principal, la imagen banner les parecía lo principal y no las noticias. No entendían muy bien los botones de categorías. Confundían las categorías con las etiquetas y les el menú de archivo, a muchos les parecía demás porque no solían buscar la información de esa manera.
 
-**Segundo prototipo**
+![prototipo2](src/img/prototipodos.png)
 
 *Segundo testeo*
+
+En este caso, los usuarios podían identificar el menú de las noticias, era un poco menos confuso, pero aún habían detalles que afinar. Ellos podían elegir noticias por categorías y además podían elegir ordenarlas por fechas. En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, teniendo en cuenta que siempre hay cosas que corregir. 
+
+
