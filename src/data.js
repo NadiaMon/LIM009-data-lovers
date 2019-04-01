@@ -47,13 +47,12 @@ const categorias = (data) => { /*data = [{ }, { }]*/
     return filtrado;
 }
 
-/*funcion ordenando fechas*/
+/*función ordenando fechas*/
 
 const ordenandoFechas = (data, cond) => {
     function ascendente(a,b){ 
         a = new Date((a.date) * 1000);
         b = new Date((b.date) * 1000);
-
         if (a > b) {
             return 1;
         } else if (b < a) {
@@ -71,6 +70,20 @@ const ordenandoFechas = (data, cond) => {
 
 console.log(ordenandoFechas(dataSteam,"ASC"));
 console.log(ordenandoFechas(dataSteam,"DESC")); //revisar
+
+/*contar los títulos*/
+
+const objetos = (arr)=> {
+    var title = {};
+    for (var i = 0; i < arr.length; ++i)
+      title[i] = arr[i];
+    return title;
+  }
+
+console.log(objetos(dataSteam));
+
+
+
 
 
 window.steam = {  /*objeto que contiene todos los métodos*/

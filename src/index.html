@@ -4,53 +4,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Data Lovers</title>
+  <title>Blog Steam</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!--encabezado-->
-  <header class="encabezado">
-  <h1>aquí va el header</h1>
-  <nav class="barra-horizontal">
-    <a href="">NOTICIAS</a>
-    <a href="">TIENDA</a>
-    <a href="">JUEGOS</a>
-  </nav>
-  </header>
-  <!--cuerpo principal-->
-  <main class="seccion-principal">
-    <div class="barra-vertical">
-      <h1>categorías</h1>
-      <button id="btn-product">Product Update</button>
-      <button id="btn-gamer">PC Gamer</button>
-      <button id="btn-euro">Eurogamer</button>
-      <button id="btn-blog">TF2 Oficial Blog</button>
-      <button id="btn-rock">Rock, Paper, Shotgun</button>
-      <!--menu select-->
-      <div>
-        <p>Ordenar noticias</p>
-        <select id="ordenar-fecha">
-          <option value="opcion1">Noticias recientes</option>
-          <option value="opcion2">Noticias pasadas</option>
-        </select>
+  <div class="contenedor">
+    <!--encabezado-->
+    <header>
+
+      <h1>aquí va el header</h1>
+      <nav class="barra-horizontal">
+        <a href="">NOTICIAS</a>
+        <a href="https://store.steampowered.com/">TIENDA</a>
+        <a href="https://store.steampowered.com/about/">ACERCA DE</a>
+        <a href="https://help.steampowered.com/es-419/">SOPORTE</a>
+      </nav>
+    </header>
+
+    <!--cuerpo principal-->
+   
+      <div class="barra-vertical">
+        <h1>categorías</h1>
+        <button id="btn-product">Product Update</button>
+        <button id="btn-gamer">PC Gamer</button>
+        <button id="btn-euro">Eurogamer</button>
+        <button id="btn-blog">TF2 Oficial Blog</button>
+        <button id="btn-rock">Rock, Paper, Shotgun</button>
+        <!--menu select-->
+        <div>
+          <p>Ordenar noticias</p>
+          <select id="ordenar-fecha">
+            <option value="DESC">Noticias recientes</option>
+            <option value="ASC">Noticias pasadas</option>
+          </select>
+        </div>
+
       </div>
-      <!-- <div class="buscador">
-        <input type="text" placeholder="Search..">
-      </div> -->
-    </div>
 
-    <div class="pantalla-muestra" id="pantalla-muestra">
+      <div class="pantalla-muestra" id="pantalla-muestra">
 
-    </div>
+      </div>
 
-  </main>
-  <footer class="pie-pagina">
-    <h1>aquí va el footer</h1>
-  </footer>
+    
+
+
+
+
+    <footer class="pie-pagina">
+      <h1>aquí va el footer</h1>
+    </footer>
+  </div>
   <script src="./data/steam/steam.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 
 </body>
+
 </html>

@@ -1,24 +1,68 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800');
+@import url(main.css);
 
 *{
     margin: 0;
     padding: 0;
 }
 
-body{
- font-family: "Work+Sans", sans-serif;
+.contenedor {
+ box-sizing: border-box;
  width: 100%;
+ margin: 0;
+ padding: 0;  
+ font-family: "Work+Sans", sans-serif;
+ 
 }
 
-.encabezado{
+/* container */
+
+.barra-vertical {
     border: 2px solid #9AD2EA;
-    width: 98%;
-    height: 100px;
-    margin: 2% auto;
-    
+    width: 15%;
+    float: left;
+    margin: 2% 1% auto;
 }
+
+.pantalla-muestra {
+    border: 2px solid #9AD2EA;
+    width: 80%;
+    float: right;
+    margin: 2% 1% auto;
+}
+
+.pie-pagina{
+    border: 2px solid #9AD2EA;
+    width: 80%;
+    margin-top: 45%;
+
+   
+}
+
+@media screen and(max-width:800px){
+  .barra-vertical {
+      width: 100%;
+  }
+.pantalla-muestra {
+    width: 100%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+
 
 .seccion-principal{
+    background-color:#2e5470;
     border: 2px solid #9AD2EA;
     width: 98%;
     height: 600px;
@@ -55,4 +99,4 @@ body{
 }
 .titulo-noticia {
     font-size:25px;
-}
+} */

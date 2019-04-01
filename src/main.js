@@ -50,30 +50,6 @@ btnProducto.addEventListener("click", () => {
 
   mostrarData.innerHTML = llamadoFiltrado("producto");
 });
-
-const btnGamer = document.getElementById("btn-gamer");
-btnGamer.addEventListener("click", () => {
-
-  mostrarData.innerHTML = llamadoFiltrado("gamer");
-});
-
-const btnEuro = document.getElementById("btn-euro");
-btnEuro.addEventListener("click", () => {
-
-  mostrarData.innerHTML = llamadoFiltrado("euro");
-});
-
-const btnBlog = document.getElementById("btn-blog");
-btnBlog.addEventListener("click", () => {
-
-  mostrarData.innerHTML = llamadoFiltrado("blog");
-});
-
-const btnRock = document.getElementById("btn-rock");
-btnRock.addEventListener("click", () => {
-
-  mostrarData.innerHTML = llamadoFiltrado("rock");
-});
 */
 
 const pintarGeneral = (boton, condicion) => {
@@ -106,7 +82,15 @@ pintarGeneral("btn-euro", "euro");
 pintarGeneral("btn-blog", "blog");
 pintarGeneral("btn-rock", "rock");
 
+/*función llamando ordenado*/
 
+const orderBlog = document.getElementById("ordenar-fecha");
+orderBlog.addEventListener("change", () => {
+  let valorBtn = orderBlog.value;
+});
+  
+console.log(ordenandoFechas(dataSteam,valorBtn));
+ 
 
 
 
