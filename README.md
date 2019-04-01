@@ -53,25 +53,25 @@ Entre las preguntas que realizamos, rescatamos estas:
 
 * ¿Con qué frecuencia visitas la página de STEAM?
 
-![frecuencia de visitas](src/img/frecuencia.png)
+![frecuencia de visitas](src/img/frecuencia.jpg)
 
 Descubrimos que al menos una vez al mes, los usuarios suelen visitar la página. Cuándo les preguntamos a qué se debía esto, la respuesta fue que para ellos era importante enterarse de las novedades, o conectarse a la comunidad. Y que visitarían la página, si tuvieran más tiempo. 
 
 * ¿Sabías que STEAM tiene una sección de Noticias?
 
-![sección noticias](src/img/noticias.png)
+![sección noticias](src/img/noticias.jpg)
 
 De los usuarios que visitan la página, un pequeño porcentaje no sabe qué existe una sección de Noticias, esto se debe a que encuentran la página desordenada, la infomación los confunde, les parece aburrida la navegación por lo que no deciden quedarse mucho tiempo. 
 
 * ¿Alguna vez visitaste esa sección?
 
-![visitas noticias](src/img/visitas.png)
+![visitas noticias](src/img/visitas.jpg)
 
 La siguiente pregunta, para los usuarios que sabían de la existencia de la sección noticas, fue si la visitaban. Hubo un porcentaje que respondió que no, y esto se debe, a que esa sección les sigue pareciendo aburrida, desordenada y confusa.
 
 * ¿Cómo sueles buscar la información?
 
-![búsqueda de información](src/img/búsqueda.png)
+![búsqueda de información](src/img/búsqueda.jpg)
 
 Al preguntar cómo suelen buscar la información, respondieron que se les haría fácil si fuera por categorías(etiquetas).
 
