@@ -6,8 +6,7 @@
 * [Resumen del proyeto](#RESUMEN-DEL-PROYETO)
 * [Proceso de diseño](#PROCESO-DE-DISEÑO)
 * [Descubrimiento e investigación](#Descubrimiento-e-investigación)
-* [Síntesis y definición](#Síntesis-y-definición)
-* [Ideación](#Ideación)
+* [Síntesis e Ideación](#Síntesis-e-Ideación)
 * [Prototipado y User testing](#Prototipado-y-User-testing)
 
 ***
@@ -29,7 +28,7 @@ información aún más relevante para los usuarios (promedio, el valor máximo o
 
 # PROCESO DE DISEÑO
 
-El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos centrados en el usuario que nos aseguren que estamos satisfaciendo sus necesidades. 
+El proceso de diseño tiene 5 fases. Estas 5 fases nos permiten crear productos centrados en el usuario que nos aseguren que estamos satisfaciendo sus necesidades. Decidimos guiarnos de este gráfico para realizar nuestra investigación, pero teniendo en cuenta las herramientas, procesos, etc. que nosotras conocemos.
 
 ![proceso diseño](src/img/proceso.png)
 
@@ -48,7 +47,7 @@ o el acceso a la información está abierta a cualquier tipo de público interes
 
 ***
 
-# Síntesis y definición
+# Síntesis e Ideación
 
 ## Encuesta
 
@@ -79,8 +78,49 @@ La siguiente pregunta, para los usuarios que sabían de la existencia de la secc
 
 Al preguntar cómo suelen buscar la información, respondieron que se les haría fácil si fuera por categorías(etiquetas).
 
-***
-# Ideación
+## Historias de usuarios
+
+Para definir las historias de nuestros usuarios,decidimos enfocarnos en las necesidade de nuestro público objetivos, rescatar algunas de las respuestas brindadas en las encuestas y sumar comentarios que nos dejaron en esta misma encuesta.
+
+En base a todo esto, formulamos las siguientes historias:
+
+1. Yo como usuario quiero ver todas las noticias al ingresar a la página
+
+*Definición de terminado:*
+- Crear estructura HTML
+- Filtrar nueva data (propiedades: title, url, contents)
+- Mostrar contenido en la consola
+- Crear función en data.js 
+- Llamar función en main.js
+- Crear un for para mostrar las noticias
+- Usar template literal para ordenar la data que se muestra (cómo hacer una tabla)
+- Pintar en el DOM las noticias
+
+2. Yo como usuario quiero buscar/filtrar las noticias por autor/categoría
+
+*Definición de terminado:*
+- Definir categorías a filtrarse, según las propiedades de nuestra data
+- Crear funciones de filtrado en data.js
+- Función que engloba el filtrado en data.js
+- Definir entre select o un botón
+- Ocultar la data de inicio cuando se llame a la data filtrada
+- Usar esas funciones desde main.js
+- Crear función que use addEventListener y llame a la data por categorías
+- Usar template literal para mostrar en el DOM
+
+3. Yo como usuario quiero ordenar las noticias por fechas para poder leer temas actuales (actual a antigua)
+
+*Definición de terminado:*
+- Definir entre select o un botón, etc.
+- Probar método new Date (timestamp)
+- Crear una función que convierta las fechas 
+- Implementar el método sort en unitario
+- Método sort para ascendente
+- Método sort para descendente
+- Función que agrupe ambos
+- Englobar función para llamarla en el main.js
+- Crear función que use addEventListener para llamar las funciones de sort
+- Pintar la data en el DOM
 
 ***
 # Prototipado y User testing
