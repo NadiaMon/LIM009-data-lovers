@@ -63,19 +63,19 @@ Descubrimos que al menos una vez al mes, los usuarios suelen visitar la página.
 
 * ¿Sabías que STEAM tiene una sección de Noticias?
 
-![noticias](src/img/noticias.jpg)
+![noticias](src/img/noticias.PNG)
 
 De los usuarios que visitan la página, un pequeño porcentaje no sabe qué existe una sección de Noticias, esto se debe a que encuentran la página desordenada, la infomación los confunde, les parece aburrida la navegación por lo que no deciden quedarse mucho tiempo. 
 
 * ¿Alguna vez visitaste esa sección?
 
-![visitas](src/img/visitas.jpg)
+![visitas](src/img/visitas.PNG)
 
 La siguiente pregunta, para los usuarios que sabían de la existencia de la sección noticas, fue si la visitaban. Hubo un porcentaje que respondió que no, y esto se debe, a que esa sección les sigue pareciendo aburrida, desordenada y confusa.
 
 * ¿Cómo sueles buscar la información?
 
-![búsqueda](src/img/búsqueda.jpg)
+![búsqueda](src/img/búsqueda.PNG)
 
 Al preguntar cómo suelen buscar la información, respondieron que se les haría fácil si fuera por categorías(etiquetas).
 
