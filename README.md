@@ -139,7 +139,7 @@ La primera foto es un sketch rápido de lo que sería el primer prototipo. Cuand
 
 En este caso, los usuarios podían identificar el menú de las noticias, era un poco menos confuso, pero aún habían detalles que afinar. Ellos podían elegir noticias por categorías y además podían elegir ordenarlas por fechas. En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, teniendo en cuenta que siempre hay cosas que corregir. 
 
-# Prototipado de Alta Fidelidad
+# Prototipo de Alta Fidelidad
 
 Se utilizó Photoshop y Figma para desarrollar el prototipo, se tomaron en cuenta los colores y formas de la página principal de Steam.
 
