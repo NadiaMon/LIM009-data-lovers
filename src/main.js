@@ -83,13 +83,15 @@ pintarGeneral("btn-blog", "blog");
 pintarGeneral("btn-rock", "rock");
 
 /*función llamando ordenado*/
-
+/*
 const orderBlog = document.getElementById("ordenar-fecha");
-orderBlog.addEventListener("change", () => {
-  let valorBtn = orderBlog.value;
+orderBlog.addEventListener("change", (event) => {
+  let valorBtn = event.target.value;
+  //const fechasOrdenadas = ordenandoFechas(dataSteam,valorBtn);
+  //pintarlafecha(fechasOrdenadas);
 });
   
-console.log(ordenandoFechas(dataSteam,valorBtn));
+crear una función de pintado const pintarlafecha, que me permita llamar la data en el DOM*/ 
  
 
 
