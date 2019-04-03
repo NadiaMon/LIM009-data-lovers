@@ -9,7 +9,7 @@ const dataMuestra = (data) => {
             date: new Date(data[i]["date"]*1000) 
         });
     }
-    return arr;
+    return arr; 
 }
 
 /*filtrado por categorías*/

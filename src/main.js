@@ -2,7 +2,7 @@
 const nuevaData = steam.dataMuestra(dataSteam); //nueva data filtrada
 const filtrarCategorias = steam.categorias(dataSteam); /*aqui llamo a mi data*/
 const mostrarData = document.getElementById("pantalla-muestra"); /*section donde se imprimira la data*/
-const nombreFecha = document.getElementById("ordenar-fecha");
+const orderBlog = document.getElementById("ordenar-fecha");
 
 const noticiaTemplate = (data) => {//data = [{title, url, content, date}, {}, {}]
   let news = "";
@@ -85,17 +85,35 @@ pintarGeneral("btn-rock", "rock");
 
 /*función llamando ordenado*/
 
-const orderBlog = document.getElementById("ordenar-fecha");
 orderBlog.addEventListener("change", (event) => {
+
   let valorBtn = event.target.value;
-  const fechasOrdenadas = ordenandoFechas(dataSteam,valorBtn);
-  pintarlafecha(fechasOrdenadas);
+  const fechasOrdenadas = ordenandoFechas(nuevaData, valorBtn);
+  mostrarData.innerHTML = noticiaTemplate(fechasOrdenadas);
+
 });
+
 
 //const pintarlafecha = ()
   
 //crear una función de pintado const pintarlafecha, que me permita llamar la data en el DOM*/ 
- 
+/* 
+orderBlog.addEventListener("change", () => {
+  const selectOrder = orderBlog.value;
+  let sortOrder;
+  switch(selectOrder){
+    case "ASC":
+    sortOrder = "ASC";
+    break;
+    case "DESC":
+    sortOrder = "DESC";
+    break;
+  }
+  */
+
+
+  
+
 
 
 
