@@ -8,9 +8,8 @@ const noticiaTemplate = (data) => {//data = [{url, titulo, contenido}, {}, {}]
   let news = "";
   for (let i = 0; i < data.length-5; i++) { //recorre toda la data
     let item = `
-      <div>
-      <h1>${data[i].title}</h1>
-      <a href="">${data[i].url}</a>
+      <div class="noticia">
+      <h2><a href="${data[i].url}"target="_blank">${data[i].title}</a></h2>
       <p>${data[i].contents}</p>
       </div>
       `
@@ -83,8 +82,8 @@ const pintarGeneral = (boton, condicion) => {
     let items = "";
     for (let i = 0; i < nombre[condicion].length; i++) {
       let item = `
-          <div>
-          <h1>${nombre[condicion][i].title}</h1>
+          <div class="noticia">
+          <h2><a href="${nombre[condicion][i].url}" target="_blank">${nombre[condicion][i].title}</a></h2>
           <p>${nombre[condicion][i].url}</p>
           <p>${nombre[condicion][i].contents}</p>
           <p>${nombre[condicion][i].author}</p>
@@ -97,6 +96,7 @@ const pintarGeneral = (boton, condicion) => {
     mostrarData.innerHTML = items;
 
   });
+ 
 
 };
 
@@ -105,6 +105,28 @@ pintarGeneral("btn-gamer", "gamer");
 pintarGeneral("btn-euro", "euro");
 pintarGeneral("btn-blog", "blog");
 pintarGeneral("btn-rock", "rock");
+
+/* funcion para el acendente y decendente */
+const ordenar = () => {
+const btnCh =document.getElementById(ordenar-fecha);
+btnCh.addEventListener("change",() =>{
+let condicion = btnCh.value
+noticiaTemplate(ordenandoFechas(ordenandoFechas,condicion));
+
+})
+};
+/*funcion para mostrar el menu de categorias en pantalla pequeña*/
+const burger = document.getElementById("burger");
+const barraVertical = document.getElementById("barra-vertical");
+
+burger.addEventListener("click",() =>{
+  barraVertical.classList.toggle("visible");
+})
+
+
+
+
+
 
 
 

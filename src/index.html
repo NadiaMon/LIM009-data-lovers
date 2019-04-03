@@ -4,23 +4,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Data Lovers</title>
+  <title>Steam News</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!--encabezado-->
   <header class="encabezado">
-  <h1>aquí va el header</h1>
-  <nav class="barra-horizontal">
-    <a href="">NOTICIAS</a>
-    <a href="">TIENDA</a>
-    <a href="">JUEGOS</a>
-  </nav>
+    <img src="img/steam-logo.jpg" width="300">
+    <a id="burger"><img src="img/burger.png" width="30" class="burger"></a>
+    <nav class="barra-horizontal">
+      <a href="index.html">NOTICIAS</a>
+      <a href="https://store.steampowered.com/" target="_blank">TIENDA</a>
+      <a href="https://store.steampowered.com/games/" target="_blank">JUEGOS</a>
+    </nav>
   </header>
   <!--cuerpo principal-->
   <main class="seccion-principal">
-    <div class="barra-vertical">
+    <div class="barra-vertical" id ="barra-vertical">
       <h1>categorías</h1>
       <button id="btn-product">Product Update</button>
       <button id="btn-gamer">PC Gamer</button>
@@ -29,24 +30,26 @@
       <button id="btn-rock">Rock, Paper, Shotgun</button>
       <!--menu select-->
       <div>
-        <p>Ordenar noticias</p>
+        <h2>Ordenar noticias</h2>
         <select id="ordenar-fecha">
-          <option value="opcion1">Noticias recientes</option>
-          <option value="opcion2">Noticias pasadas</option>
+          <option value="DESC">Noticias recientes</option>
+          <option value="ASC">Noticias pasadas</option>
         </select>
       </div>
       <!-- <div class="buscador">
         <input type="text" placeholder="Search..">
       </div> -->
     </div>
+    <div class="barra-derecha">
 
-    <div class="pantalla-muestra" id="pantalla-muestra">
-
+    <h1>NOTICIAS</h1>
+    <div class="pantalla-muestra" id="pantalla-muestra"></div>
     </div>
 
   </main>
   <footer class="pie-pagina">
-    <h1>aquí va el footer</h1>
+    <p>Noticia <a href="https://steampowered.com"target="_blank">Steam</a>2019</p>
+    <p>Creado con amor por Mari & Nadia</p>
   </footer>
   <script src="./data/steam/steam.js"></script>
   <script src="data.js"></script>
