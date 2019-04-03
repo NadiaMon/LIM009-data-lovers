@@ -4,7 +4,7 @@ const filtrarCategorias = steam.categorias(dataSteam); /*aqui llamo a mi data*/
 const mostrarData = document.getElementById("pantalla-muestra"); /*section donde se imprimira la data*/
 const nombreFecha = document.getElementById("ordenar-fecha");
 
-const noticiaTemplate = (data) => {//data = [{url, titulo, contenido}, {}, {}]
+const noticiaTemplate = (data) => {//data = [{title, url, content, date}, {}, {}]
   let news = "";
   for (let i = 0; i < data.length-5; i++) { //recorre toda la data
     let item = `
@@ -12,6 +12,7 @@ const noticiaTemplate = (data) => {//data = [{url, titulo, contenido}, {}, {}]
       <h1>${data[i].title}</h1>
       <a href="">${data[i].url}</a>
       <p>${data[i].contents}</p>
+      <p>${data[i].date}</p>
       </div>
       `
       ;
@@ -83,15 +84,17 @@ pintarGeneral("btn-blog", "blog");
 pintarGeneral("btn-rock", "rock");
 
 /*función llamando ordenado*/
-/*
+
 const orderBlog = document.getElementById("ordenar-fecha");
 orderBlog.addEventListener("change", (event) => {
   let valorBtn = event.target.value;
-  //const fechasOrdenadas = ordenandoFechas(dataSteam,valorBtn);
-  //pintarlafecha(fechasOrdenadas);
+  const fechasOrdenadas = ordenandoFechas(dataSteam,valorBtn);
+  pintarlafecha(fechasOrdenadas);
 });
+
+//const pintarlafecha = ()
   
-crear una función de pintado const pintarlafecha, que me permita llamar la data en el DOM*/ 
+//crear una función de pintado const pintarlafecha, que me permita llamar la data en el DOM*/ 
  
 
 

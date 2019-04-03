@@ -4,7 +4,10 @@ const dataSteam = STEAM.appnews.newsitems;
 const dataMuestra = (data) => {
     const arr = [];
     for (let i = 0; i < data.length; i++) {
-        arr.push({ title: data[i].title, url: data[i].url, contents: data[i].contents });
+        arr.push({
+            title: data[i].title, url: data[i].url, contents: data[i].contents,
+            date: new Date(data[i]["date"]*1000) 
+        });
     }
     return arr;
 }
@@ -70,19 +73,21 @@ const ordenandoFechas = (data, sortOrder) => {
 // console.log(dataSD[0]);
 // console.log(dataSteam[0]);
 
+/*
 console.log(ordenandoFechas(dataSteam, "ASC"));
 console.log(ordenandoFechas(dataSteam, "DESC"));
+*/
 
 /*contar los títulos*/
 
-// const objetos = (arr)=> {
-//     var title = {};
-//     for (var i = 0; i < arr.length; ++i)
-//       title[i] = arr[i];
-//     return title;
-//   }
+const objetos = (arr)=> {
+    var title = {};
+    for (var i = 0; i < arr.length; ++i)
+      title[i] = arr[i];
+    return title;
+  }
 
-// console.log(objetos(dataSteam));
+console.log(objetos(dataSteam));
 
 
 
