@@ -5,14 +5,14 @@
     padding: 0;
 }
 
-body{
+.body {
  font-family: "Work+Sans", sans-serif;
  width: 100%;
- background: #27344b;
- color: white;
+ background:white;
+ color: rgb(25, 3, 75);
 }
 
-.encabezado{
+.encabezado {
     width: calc(100% - 100px);
     height: 100px;
   background: rgb(10, 10, 10);
@@ -23,9 +23,12 @@ body{
     display: none;
 }
 
-.seccion-principal{
+.seccion-principal {
     width: 100%;
     display: flex;
+    background-color: #232d3f;
+  font-size: 15px;
+
 }
 
 .barra-horizontal {
@@ -46,7 +49,7 @@ body{
   text-decoration: underline;
 }
 
-.barra-vertical{
+.barra-vertical {
     border-radius: 2px;
     width: 20%;
     padding: 15px;
@@ -59,6 +62,7 @@ body{
 
 .barra-vertical h1 {
       margin-bottom: 25px;
+      color:white;
     text-align: center;
     text-transform: uppercase;
 }
@@ -67,14 +71,14 @@ body{
     width: 100%;
     background-color: #232d3f;
     border: 0;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
     color:white;
     border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
 }
-.barra-vertical select{
+.barra-vertical select {
     width: 100%;
     margin-top: 10px;
     padding: 5px;
@@ -82,11 +86,11 @@ body{
 }
 
 
-.pantalla-muestra{
-
+.pantalla-muestra {
+ 
 }
 
-.pie-pagina{
+.pie-pagina {
     bottom: 0;
       width: 100%;
     text-align: center;
@@ -120,6 +124,7 @@ body{
 }
 .noticia {
     margin-bottom: 35px;
+    
 }
 .noticia h2 {
     margin-bottom: 15px;
@@ -128,11 +133,11 @@ body{
 .noticia h2 a {
     text-decoration: none;
     color: rgb(165, 154, 6);
-    font-size: 30px;
+    font-size: 35px;
 }
-.noticia p {
+.noticia-p {
 font-size: 20px;
-line-height: 25px;
+line-height: 20px;
 
 }
 .noticia a {

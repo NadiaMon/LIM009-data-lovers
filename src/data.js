@@ -1,12 +1,15 @@
 const dataSteam = STEAM.appnews.newsitems;
 
-/*nueva data para mostrar en primera pantalla*/ 
-const dataMuestra = (data) => { 
+/*nueva data para mostrar en primera pantalla*/
+const dataMuestra = (data) => {
     const arr = [];
     for (let i = 0; i < data.length; i++) {
-        arr.push({ title: data[i].title, url: data[i].url, contents: data[i].contents });
+        arr.push({
+            title: data[i].title, url: data[i].url, contents: data[i].contents,
+            date: new Date(data[i]["date"]*1000) 
+        });
     }
-    return arr;
+    return arr; 
 }
 
 /*filtrado por categorías*/
@@ -47,30 +50,47 @@ const categorias = (data) => { /*data = [{ }, { }]*/
     return filtrado;
 }
 
-/*funcion ordenando fechas*/
+/*función ordenando fechas*/
 
-const ordenandoFechas = (data, cond) => {
-    function ascendente(a,b){ 
-        a = new Date((a.date) * 1000);
-        b = new Date((b.date) * 1000);
-
-        if (a > b) {
-            return 1;
-        } else if (b < a) {
-            return -1;
-        } else if (a === b) {
-            return 0;
-        }
+const ordenandoFechas = (data, sortOrder) => {
+    const compare = (a, b) => {
+        return a['date'] - b['date']; //ascendente
     }
-    if (cond === "ASC") {      
-        return data.sort(ascendente);   
-    }else if(cond === "DESC"){
-        return data.sort(ascendente).reverse();
+    if (sortOrder === "ASC") {
+        return data.concat().sort(compare);
+         
+    }
+    else if (sortOrder === "DESC") {
+        return data.concat().sort(compare).reverse();
     }
 }
 
-console.log(ordenandoFechas(dataSteam,"ASC"));
-console.log(ordenandoFechas(dataSteam,"DESC")); //revisar
+// console.log(dataSteam[0]);
+// let dataSA = ordenandoFechas(dataSteam, "ASC");
+// console.log(dataSA[0]);
+// console.log(dataSteam[0]);
+// let dataSD = ordenandoFechas(dataSteam, "DESC");
+// console.log(dataSD[0]);
+// console.log(dataSteam[0]);
+
+/*
+console.log(ordenandoFechas(dataSteam, "ASC"));
+console.log(ordenandoFechas(dataSteam, "DESC"));
+*/
+
+/*contar los títulos*/
+
+const objetos = (arr)=> {
+    var title = {};
+    for (var i = 0; i < arr.length; ++i)
+      title[i] = arr[i];
+    return title;
+  }
+
+console.log(objetos(dataSteam));
+
+
+
 
 
 window.steam = {  /*objeto que contiene todos los métodos*/
