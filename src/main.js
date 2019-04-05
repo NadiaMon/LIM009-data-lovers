@@ -6,7 +6,7 @@ const orderBlog = document.getElementById("ordenar-fecha");
 
 const noticiaTemplate = (data) => {//data = [{title, url, content, date}, {}, {}]
   let news = "";
-  for (let i = 0; i < data.length-5; i++) { //recorre toda la data
+  for (let i = 0; i < data.length; i++) { //recorre toda la data
     let item = `
       <div>
       <h1>${data[i].title}</h1>
@@ -25,53 +25,25 @@ mostrarData.innerHTML = noticiaTemplate(nuevaData);
 
 /*funcion para el boton de filtrado*/
 
-/*
-const llamadoFiltrado = (condicion) => {
-  let nombre = steam.categorias(dataSteam);
-  let item = "";
-  for (let i = 0; i < nombre[condicion].length; i++) {
-    let items = `
-          <div>
-          <h1>${nombre[condicion][i].title}</h1>
-          <p>${nombre[condicion][i].url}</p>
-          <p>${nombre[condicion][i].contents}</p> 
-          <p>${nombre[condicion][i].author}</p> 
-          <p>${nombre[condicion][i].feedlabel}</p>     
-          </div>
-          `
-      ;
-    item += items
-
-  }
-  return item;
-}
-
-const btnProducto = document.getElementById("btn-product");
-btnProducto.addEventListener("click", () => {
-
-  mostrarData.innerHTML = llamadoFiltrado("producto");
-});
-*/
-
-const pintarGeneral = (boton, condicion) => {
+const pintarGeneral = (boton, category) => {
   const btn = document.getElementById(boton);
   btn.addEventListener("click", () => {
     let nombre = steam.categorias(dataSteam);
-    let items = "";
-    for (let i = 0; i < nombre[condicion].length; i++) {
+    let itemsHTML = "";
+    for (let i = 0; i < nombre[category].length; i++) {
       let item = `
           <div>
-          <h1>${nombre[condicion][i].title}</h1>
-          <p>${nombre[condicion][i].url}</p>
-          <p>${nombre[condicion][i].contents}</p>
-          <p>${nombre[condicion][i].author}</p>
-          <p>${nombre[condicion][i].feedlabel}</p>
+          <h2>${nombre[category][i].title}</h2>
+          <p>${nombre[category][i].url}</p>
+          <p>${nombre[category][i].contents}</p>
+          <p>${nombre[category][i].author}</p>
+          <p>${nombre[category][i].feedlabel}</p>
           </div>
           `;
-        items += item
+          itemsHTML += item
 
     }
-    mostrarData.innerHTML = items;
+    mostrarData.innerHTML = `<h1>${category} (${nombre[category].length})</h1>` + itemsHTML;
 
   });
 
@@ -86,30 +58,27 @@ pintarGeneral("btn-rock", "rock");
 /*función llamando ordenado*/
 
 orderBlog.addEventListener("change", (event) => {
-
   let valorBtn = event.target.value;
-  const fechasOrdenadas = ordenandoFechas(nuevaData, valorBtn);
+  const fechasOrdenadas = ordenandoFechas(nuevaData, valorBtn); /*función ordenado*/
   mostrarData.innerHTML = noticiaTemplate(fechasOrdenadas);
 
 });
 
+/*función cálculo matemático*/
 
-//const pintarlafecha = ()
-  
-//crear una función de pintado const pintarlafecha, que me permita llamar la data en el DOM*/ 
-/* 
-orderBlog.addEventListener("change", () => {
-  const selectOrder = orderBlog.value;
-  let sortOrder;
-  switch(selectOrder){
-    case "ASC":
-    sortOrder = "ASC";
-    break;
-    case "DESC":
-    sortOrder = "DESC";
-    break;
-  }
-  */
+const renderCategories = (elementId, categories) => {
+
+const element = document.getElementById(elementId)
+const categoriesHTML = categories.map((categoryObj) => `
+<li>${categoryObj.title}-${categoryObj.percentage}%</li>
+`).join("")
+
+element.innerHTML = `<ul>${categoriesHTML}</ul>`;
+}
+
+renderCategories("categories", computeCategoryStats(dataSteam));
+
+
 
 
   
