@@ -5,12 +5,12 @@
     padding: 0;
 }
 
-.body {
- font-family: "Work+Sans", sans-serif;
- width: 100%;
- background:white;
- color: rgb(25, 3, 75);
-}
+.body{
+  font-family: "Work+Sans", sans-serif;
+  width: 100%;
+  background:white;
+  color: rgb(25,3,75);
+ }
 
 .encabezado {
     width: calc(100% - 100px);
