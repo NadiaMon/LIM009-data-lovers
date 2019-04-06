@@ -1,12 +1,11 @@
-//const dataSteam = STEAM.appnews.newsitems;
-const nuevaData = steam.dataMuestra(dataSteam); //nueva data filtrada
-const filtrarCategorias = steam.categorias(dataSteam); /*aqui llamo a mi data*/
+const nuevaData = steam.dataMuestra(dataSteam); /*nueva data filtrada*/
+const filtrarCategorias = steam.categorias(dataSteam); /*aqui llamo a mi data filtrada por categorias*/
 const mostrarData = document.getElementById("pantalla-muestra"); /*section donde se imprimira la data*/
 const orderBlog = document.getElementById("ordenar-fecha");
 
-const noticiaTemplate = (data) => {//data = [{title, url, content, date}, {}, {}]
+const noticiaTemplate = (data) => {/*data = [{title, url, content, date}, {}, {}]*/
   let news = "";
-  for (let i = 0; i < data.length; i++) { //recorre toda la data
+  for (let i = 0; i < data.length; i++) { /*recorre toda la data*/
     let item = `
       <div>
       <h1>${data[i].title}</h1>
@@ -66,22 +65,23 @@ orderBlog.addEventListener("change", (event) => {
 
 /*función cálculo matemático*/
 
-const renderCategories = (elementId, categories) => {
+const renderCategories = (elementId, categoriesFunction) => {
+  const element = document.getElementById(elementId);
+  element.addEventListener("click", () => {
 
-const element = document.getElementById(elementId)
-const categoriesHTML = categories.map((categoryObj) => `
-<li>${categoryObj.title}-${categoryObj.percentage}%</li>
-`).join("")
+    const categoriesHTML = categoriesFunction.map((categoryObj) => `
+    <li>${categoryObj.title}-${categoryObj.percentage}%</li>
+    `).join(" ")
 
-element.innerHTML = `<ul>${categoriesHTML}</ul>`;
-}
+    mostrarData.innerHTML = `<div><ul>${categoriesHTML}</ul></div>`;
+  });
 
-renderCategories("categories", computeCategoryStats(dataSteam));
+};
+
+renderCategories("btnCategories", computeCategoryStats(dataSteam));
 
 
 
-
-  
 
 
 

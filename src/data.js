@@ -58,7 +58,7 @@ console.log(categorias(dataSteam));
 
 const ordenandoFechas = (data, sortOrder) => {
     const compare = (a, b) => {
-        return a['date'] - b['date']; //ascendente
+        return a['date'] - b['date']; /*ascendente*/
     }
     if (sortOrder === "ASC") {
         return data.concat().sort(compare);
@@ -69,26 +69,13 @@ const ordenandoFechas = (data, sortOrder) => {
     }
 }
 
-// console.log(dataSteam[0]);
-// let dataSA = ordenandoFechas(dataSteam, "ASC");
-// console.log(dataSteam[0]);
-// let dataSD = ordenandoFechas(dataSteam, "DESC");
-// console.log(dataSteam[0]);
-
-/*
-console.log(ordenandoFechas(dataSteam, "ASC"));
-console.log(ordenandoFechas(dataSteam, "DESC"));
-*/
-
 /*función porcentajes*/
 
-const computePercentage = (part, total) => { //porcentaje
-
+const computePercentage = (part, total) => { /*porcentaje*/
     return (part / total) * 100
-
 }
 
-const computeCategoryStats = (data) => { //porcentaje de filtrado
+const computeCategoryStats = (data) => { /*porcentaje de filtrado*/
   const categories = categorias(data);
   const stats = Object.keys(categories).map((category) => {
     return {
@@ -100,25 +87,6 @@ const computeCategoryStats = (data) => { //porcentaje de filtrado
 }
 
 computeCategoryStats(dataSteam);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.steam = {  /*objeto que contiene todos los métodos*/
     dataMuestra: dataMuestra,
