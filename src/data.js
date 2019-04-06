@@ -1,6 +1,7 @@
 const dataSteam = STEAM.appnews.newsitems;
 
 /*nueva data para mostrar en primera pantalla*/
+
 const dataMuestra = (data) => {
     const arr = [];
     for (let i = 0; i < data.length; i++) {
@@ -13,6 +14,7 @@ const dataMuestra = (data) => {
 }
 
 /*filtrado por categorías*/
+
 const categorias = (data) => { /*data = [{ }, { }]*/
 
     const filtrado = {};
@@ -21,7 +23,7 @@ const categorias = (data) => { /*data = [{ }, { }]*/
         return (producto.feedlabel === "Product Update");
     })
 
-    filtrado.producto = productUpdate; /*propiedad:value que se agregan a filtrado*/
+    filtrado.producto = productUpdate;
 
     const pcGamer = data.filter((gamer) => {
         return (gamer.feedlabel === "PC Gamer");
@@ -47,14 +49,16 @@ const categorias = (data) => { /*data = [{ }, { }]*/
 
     filtrado.rock = rockPaperShotgun;
 
-    return filtrado;
+        return filtrado;
 }
+
+console.log(categorias(dataSteam));
 
 /*función ordenando fechas*/
 
 const ordenandoFechas = (data, sortOrder) => {
     const compare = (a, b) => {
-        return a['date'] - b['date']; //ascendente
+        return a['date'] - b['date']; /*ascendente*/
     }
     if (sortOrder === "ASC") {
         return data.concat().sort(compare);
@@ -65,37 +69,28 @@ const ordenandoFechas = (data, sortOrder) => {
     }
 }
 
-// console.log(dataSteam[0]);
-// let dataSA = ordenandoFechas(dataSteam, "ASC");
-// console.log(dataSA[0]);
-// console.log(dataSteam[0]);
-// let dataSD = ordenandoFechas(dataSteam, "DESC");
-// console.log(dataSD[0]);
-// console.log(dataSteam[0]);
+/*función porcentajes*/
 
-/*
-console.log(ordenandoFechas(dataSteam, "ASC"));
-console.log(ordenandoFechas(dataSteam, "DESC"));
-*/
+const computePercentage = (part, total) => { /*porcentaje*/
+    return (part / total) * 100
+}
 
-/*contar los títulos*/
+const computeCategoryStats = (data) => { /*porcentaje de filtrado*/
+  const categories = categorias(data);
+  const stats = Object.keys(categories).map((category) => {
+    return {
+        title: category,
+        percentage: computePercentage(categories[category].length, data.length)
+    }
+  })
+ return stats;
+}
 
-const objetos = (arr)=> {
-    var title = {};
-    for (var i = 0; i < arr.length; ++i)
-      title[i] = arr[i];
-    return title;
-  }
-
-console.log(objetos(dataSteam));
-
-
-
-
+computeCategoryStats(dataSteam);
 
 window.steam = {  /*objeto que contiene todos los métodos*/
     dataMuestra: dataMuestra,
     categorias: categorias,
-    ordenandoFechas: ordenandoFechas
-
+    ordenandoFechas: ordenandoFechas,
+    computeCategoryStats:computeCategoryStats
 }

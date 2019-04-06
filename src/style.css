@@ -1,41 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800');
 
-*{
-    margin: 0;
-    padding: 0;
+/*A todos los elementos*/
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.body{
+body{
   font-family: "Work+Sans", sans-serif;
   width: 100%;
-  background:white;
-  color: rgb(25,3,75);
- }
+  background: #1b2838;
+  color: white;
+}
 
-.encabezado {
-    width: calc(100% - 100px);
-    height: 100px;
-  background: rgb(10, 10, 10);
-    padding: 5px 50px;
-    position: fixed;
+.encabezado{
+  /* calc permite hacer cálculo matemáticos dentro de css */
+  /* se resta 100px por el padding (50px de la izquierda y 50 a la derecha) */
+  width: calc(100% - 100px);
+  height: 100px;
+  background: black;
+  padding: 5px 50px;
+  /*Hace que siempre aparesca en el mismo lugar. Aunque se mueva la pagina, esto no se mueve*/
+  position: fixed;
 }
 .encabezado .burger {
-    display: none;
+  /*Oculta*/
+  display: none;
 }
-
-.seccion-principal {
-    width: 100%;
-    display: flex;
-    background-color: #232d3f;
-  font-size: 15px;
-
+.seccion-principal{
+  width: 100%;
+  /*Para que aparesca como columna*/
+  display: flex;
 }
 
 .barra-horizontal {
-    position: absolute;
-    display: inline-block;
-    top: 40px;
-    right: 40px;
+  position: absolute;
+  display: inline-block;
+  top: 40px;
+  right: 40px;
 }
 
 .barra-horizontal a {
@@ -45,68 +47,75 @@
   font-size: 20px;
 }
 
+/*El :hover sirve para activar cuando el mouse pasa encima del elemento*/
 .barra-horizontal a:hover {
   text-decoration: underline;
 }
 
 .barra-vertical {
-    border-radius: 2px;
-    width: 20%;
-    padding: 15px;
-    background: #212529;
-    height: calc(100vh - 150px);
-    position: fixed;
-    top: 110px;
-    
+  border-radius: 2px;
+  width: 20%;
+  padding: 15px;
+  background: #212529;
+  /* Se pone el height para que la barra lateral se extienda hasta el final */
+  /* 100vh es el tamaño vertical de la pantalla */
+  /* Se resta 150px: 100 por el encabezado y 50 por el pie de de pagina */
+  height: calc(100vh - 150px);
+  /*para que no se mueva a pesar de que se baje la pantalla*/
+  position: fixed;
+  /*para que baje 110px de la parte de arriba. */
+  /* 110px es el tamaño de del encabezado: 100px de height y 5px de padding de arriba y 5px de padding de abajo*/
+  top: 110px;
 }
 
 .barra-vertical h1 {
-      margin-bottom: 25px;
-      color:white;
-    text-align: center;
-    text-transform: uppercase;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .barra-vertical button {
-    width: 100%;
-    background-color: #232d3f;
-    border: 0;
-    padding: 5px;
-    margin-bottom: 10px;
-    color:white;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
+  width: 100%;
+  background-color: #419494;
+  border: 0;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
 }
+
 .barra-vertical select {
-    width: 100%;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
+.pantalla-muestra{
 
-.pantalla-muestra {
- 
+
 }
 
-.pie-pagina {
-    bottom: 0;
-      width: 100%;
-    text-align: center;
-    padding: 5px 0;
-    background: #171A21;
-    position: fixed;
-    height: 50px;
+.pie-pagina{
+  /*Para que siempre aparesca abajo*/
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  background: #292952;
+  position: fixed;
+  height: 50px;
 }
 
 .pie-pagina a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .titulo-noticia {
-    font-size:25px;
+  font-size:25px;
 }
 
 .barra-derecha {
@@ -114,144 +123,146 @@
   width: 75%;
   padding: 15px;
   padding-left: 50px;
-  margin-left: 22%;
+  margin-left: 20%;
   margin-top: 110px;
-
 }
+
 .barra-derecha h1 {
-    margin-bottom: 25px;
-    text-transform: uppercase;
+  margin-bottom: 25px;
+  text-transform: uppercase;
 }
-.noticia {
-    margin-bottom: 35px;
-    
-}
-.noticia h2 {
-    margin-bottom: 15px;
-   
-}
-.noticia h2 a {
-    text-decoration: none;
-    color: rgb(165, 154, 6);
-    font-size: 35px;
-}
-.noticia-p {
-font-size: 20px;
-line-height: 20px;
 
+.noticia {
+  margin-bottom: 35px;
 }
+
+.noticia h2 {
+  margin-bottom: 15px;
+}
+
+.noticia h2 a {
+  text-decoration: none;
+  color: #a4d007;
+  font-size: 35px;
+}
+
+.noticia p {
+  font-size: 25px;
+  /*espacio entre las lineas de un parrafo*/
+  line-height: 35px;
+}
+
 .noticia a {
-    color: rgb(28, 114, 28);
-    
+  color: #a4d007;
 }
-/*Responsive */
+
+/*Responsive Design*/
 
 /*Para pantallas de computadora pequeña */
 /*Tamaño maximo de 1024px*/
 @media only screen and (max-width:1024px) {
-    .barra-vertical h1 {
-      font-size: 25px;
-    }
-    .barra-vertical h2 {
-      font-size: 20px;
-    }
-    .noticia h2 a {
-      font-size: 28px;
-    }
-    .noticia p {
-      font-size: 20px;
-      line-height: 28px;
-    }
-    .barra-derecha h1 {
-      font-size: 25px;
-    }
+  .barra-vertical h1 {
+    font-size: 25px;
   }
-  
-  /*Para tablets*/
-  /*Tamaño máximo de 768px*/
-  @media only screen and (max-width:768px) {
-    .barra-vertical {
-      top: 60px;
-    }
-    .barra-vertical h1 {
-      font-size: 20px;
-    }
-    .barra-vertical h2 {
-      font-size: 16px;
-    }
-    .noticia {
-      margin-bottom: 20px;
-    }
-    .noticia h2 {
-      margin-bottom: 10px;
-    }
-    .noticia h2 a {
-      font-size: 22px;
-    }
-    .noticia p {
-      font-size: 16px;
-      line-height: 20px;
-    }
-    .barra-derecha {
-      margin-top: 60px;
-    }
-    .barra-derecha h1 {
-      font-size: 20px;
-    }
-    .encabezado {
-      height: 50px;
-    }
-    .encabezado img {
-      width: 150px;
-    }
-    .barra-horizontal {
-      top: 20px;
-    }
-    .barra-horizontal a {
-      font-size: 15px;
-    }
+  .barra-vertical h2 {
+    font-size: 20px;
   }
-  
-  /*Para celulares*/
-  /*Tamaño máximo de 425px*/
-  @media only screen and (max-width:425px) {
-    .encabezado {
-      text-align: center;
-    }
-    .barra-horizontal {
-      display: none;
-    }
-    .barra-vertical {
-      width: 100%;
-      /*-30px por el padding de la barra vertical*/
-      width: calc(100% - 30px);
-      height: auto;
-      display: none;
-    }
-    .barra-vertical h1 {
-      display: none;
-    }
-    .barra-vertical h2 {
-      display: none;
-    }
-    .barra-vertical button {
-      width: auto;
-    }
-    .barra-derecha {
-      width: 100%;
-      padding-left: 15px;
-      margin-left: auto;
-    }
-    .encabezado .burger {
-      display: block;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 40px;
-      cursor: pointer;
-    }
-    .visible {
-      display: block;
-    }
+  .noticia h2 a {
+    font-size: 28px;
   }
-  
+  .noticia p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .barra-derecha h1 {
+    font-size: 25px;
+  }
+}
+
+/*Para tablets*/
+/*Tamaño máximo de 768px*/
+@media only screen and (max-width:768px) {
+  .barra-vertical {
+    top: 60px;
+  }
+  .barra-vertical h1 {
+    font-size: 20px;
+  }
+  .barra-vertical h2 {
+    font-size: 16px;
+  }
+  .noticia {
+    margin-bottom: 20px;
+  }
+  .noticia h2 {
+    margin-bottom: 10px;
+  }
+  .noticia h2 a {
+    font-size: 22px;
+  }
+  .noticia p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .barra-derecha {
+    margin-top: 60px;
+  }
+  .barra-derecha h1 {
+    font-size: 20px;
+  }
+  .encabezado {
+    height: 50px;
+  }
+  .encabezado img {
+    width: 150px;
+  }
+  .barra-horizontal {
+    top: 20px;
+  }
+  .barra-horizontal a {
+    font-size: 15px;
+  }
+}
+
+/*Para celulares*/
+/*Tamaño máximo de 425*/
+@media only screen and (max-width:425px) {
+  .encabezado {
+    text-align: center;
+  }
+  .barra-horizontal {
+    display: none;
+  }
+  .barra-vertical {
+    width: 100%;
+    /*-30px por el padding de la barra vertical*/
+    width: calc(100% - 30px);
+    height: auto;
+    display: none;
+  }
+  .barra-vertical h1 {
+    display: none;
+  }
+  .barra-vertical h2 {
+    display: none;
+  }
+  .barra-vertical button {
+    width: auto;
+  }
+  .barra-derecha {
+    width: 100%;
+    padding-left: 15px;
+    margin-left: auto;
+  }
+  .encabezado .burger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    cursor: pointer;
+  }
+  .visible {
+    display: block;
+  }
+}

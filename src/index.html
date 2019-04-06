@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Steam News</title>
+  <title>Blog Steam</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -17,42 +17,47 @@
       <a href="index.html">NOTICIAS</a>
       <a href="https://store.steampowered.com/" target="_blank">TIENDA</a>
       <a href="https://store.steampowered.com/games/" target="_blank">JUEGOS</a>
+      <a href="https://help.steampowered.com/es-419/" target="_blank">SOPORTE</a>
     </nav>
   </header>
+
   <!--cuerpo principal-->
-  <main class="seccion-principal">
-    <div class="barra-vertical" id ="barra-vertical">
+  <div class="seccion-principal">
+    <div class="barra-vertical" id="barra-vertical">
       <h1>categorías</h1>
       <button id="btn-product">Product Update</button>
       <button id="btn-gamer">PC Gamer</button>
       <button id="btn-euro">Eurogamer</button>
       <button id="btn-blog">TF2 Oficial Blog</button>
       <button id="btn-rock">Rock, Paper, Shotgun</button>
-      <!--menu select-->
       <div>
-        <h2>Ordenar noticias</h2>
+        <p>Ordenar noticias</p>
         <select id="ordenar-fecha">
+          <option value="disabled">Noticias</option>
           <option value="DESC">Noticias recientes</option>
           <option value="ASC">Noticias pasadas</option>
         </select>
       </div>
-      <!-- <div class="buscador">
-        <input type="text" placeholder="Search..">
-      </div> -->
+      <div>
+        <h1>Estadística</h1>
+        <button id="btnCategories">Mostrar estadística</button>
+      </div>
     </div>
-    <div class="barra-derecha">
-      <h1>Noticias</h1>
-    <div class="pantalla-muestra" id="pantalla-muestra"></div>
-    </div>
+  </div>
 
-  </main>
+  <div class="barra-derecha">
+    <h1>Noticias</h1>
+    <div class="pantalla-muestra" id="pantalla-muestra"></div>
+  </div>
+
   <footer class="pie-pagina">
-  <p>Noticias<a href="https://steampowered.com" target="_blank"steam></a>2019</p>
-    <p>Creado con amor por Mari & Nadia</p>
+    <p>Noticias <a href="https://steampowered.com/" target="_blank">Steam</a> 2019</p>
+    <p>Creado con 🧡 por Mari & Nadia</p>
   </footer>
   <script src="./data/steam/steam.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 
 </body>
+
 </html>
