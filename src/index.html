@@ -9,22 +9,21 @@
 </head>
 
 <body>
-  <div class="contenedor">
-    <!--encabezado-->
-    <header>
+  <!--encabezado-->
+  <header class="encabezado">
+    <img src="img/steam-logo.jpg" width="300">
+    <a id="burger"><img src="img/burger.png" width="30" class="burger"></a>
+    <nav class="barra-horizontal">
+      <a href="index.html">NOTICIAS</a>
+      <a href="https://store.steampowered.com/" target="_blank">TIENDA</a>
+      <a href="https://store.steampowered.com/games/" target="_blank">JUEGOS</a>
+      <a href="https://help.steampowered.com/es-419/" target="_blank">SOPORTE</a>
+    </nav>
+  </header>
 
-      <h1>aquí va el header</h1>
-      <nav class="barra-horizontal">
-        <a href="">NOTICIAS</a>
-        <a href="https://store.steampowered.com/">TIENDA</a>
-        <a href="https://store.steampowered.com/about/">ACERCA DE</a>
-        <a href="https://help.steampowered.com/es-419/">SOPORTE</a>
-      </nav>
-    </header>
-
-    <!--cuerpo principal-->
-
-    <div class="barra-vertical">
+  <!--cuerpo principal-->
+  <div class="seccion-principal">
+    <div class="barra-vertical" id="barra-vertical">
       <h1>categorías</h1>
       <button id="btn-product">Product Update</button>
       <button id="btn-gamer">PC Gamer</button>
@@ -40,21 +39,21 @@
         </select>
       </div>
       <div>
-      <h1>Estadística</h1>
-      <button id="btnCategories">Mostrar estadística</button>
+        <h1>Estadística</h1>
+        <button id="btnCategories">Mostrar estadística</button>
       </div>
-    
-
     </div>
-
-    <div class="pantalla-muestra" id="pantalla-muestra">
-
-    </div>
-
-    <footer class="pie-pagina">
-      <h1>aquí va el footer</h1>
-    </footer>
   </div>
+
+  <div class="barra-derecha">
+    <h1>Noticias</h1>
+    <div class="pantalla-muestra" id="pantalla-muestra"></div>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>Noticias <a href="https://steampowered.com/" target="_blank">Steam</a> 2019</p>
+    <p>Creado con 🧡 por Mari & Nadia</p>
+  </footer>
   <script src="./data/steam/steam.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>

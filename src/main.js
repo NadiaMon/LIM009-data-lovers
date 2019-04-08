@@ -7,11 +7,10 @@ const noticiaTemplate = (data) => {/*data = [{title, url, content, date}, {}, {}
   let news = "";
   for (let i = 0; i < data.length; i++) { /*recorre toda la data*/
     let item = `
-      <div>
-      <h1>${data[i].title}</h1>
-      <a href="">${data[i].url}</a>
-      <p>${data[i].contents}</p>
-      <p>${data[i].date}</p>
+      <div class="noticia">
+        <h2><a href="${data[i].url}" target="_blank">${data[i].title}</a></h2>
+        <p>${data[i].contents}</p>
+        <p class="fecha">${data[i].date}</p>
       </div>
       `
       ;
@@ -31,12 +30,12 @@ const pintarGeneral = (boton, category) => {
     let itemsHTML = "";
     for (let i = 0; i < nombre[category].length; i++) {
       let item = `
-          <div>
-          <h2>${nombre[category][i].title}</h2>
-          <p>${nombre[category][i].url}</p>
+          <div class="noticia">
+          <h2><a href="${nombre[category][i].url}" target="_blank">${nombre[category][i].title}</a></h2>
           <p>${nombre[category][i].contents}</p>
-          <p>${nombre[category][i].author}</p>
-          <p>${nombre[category][i].feedlabel}</p>
+          <p class="fecha">${nombre[category][i].date}</p>
+          <!--<p>${nombre[category][i].author}</p>
+          <p>${nombre[category][i].feedlabel}</p>-->
           </div>
           `;
           itemsHTML += item
@@ -79,6 +78,15 @@ const renderCategories = (elementId, categoriesFunction) => {
 };
 
 renderCategories("btnCategories", computeCategoryStats(dataSteam));
+
+
+//Funcionalidad para mostrar el menú de categorías en pantallas pequeñas.
+const burger = document.getElementById("burger");
+const barraVertical = document.getElementById("barra-vertical");
+
+burger.addEventListener("click", () => {
+  barraVertical.classList.toggle("visible");
+})
 
 
 
