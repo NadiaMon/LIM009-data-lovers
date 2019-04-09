@@ -8,6 +8,8 @@
   },
   "extends": "eslint:recommended",
   "globals": {
+    "STEAM": false,
+    "steam": false,
     "dataSteam": false,
     "dataMuestra": false,
     "categorias": false,
