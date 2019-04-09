@@ -1,11 +1,11 @@
-const nuevaData = steam.dataMuestra(dataSteam); /*nueva data filtrada*/
-const filtrarCategorias = steam.categorias(dataSteam); /*aqui llamo a mi data filtrada por categorias*/
-const mostrarData = document.getElementById("pantalla-muestra"); /*section donde se imprimira la data*/
-const orderBlog = document.getElementById("ordenar-fecha");
+const dataSteam = STEAM.appnews.newsitems;
+const nuevaData = steam.dataMuestra(dataSteam); /* nueva data filtrada*/
+const mostrarData = document.getElementById('pantalla-muestra'); /* section donde se imprimira la data*/
+const orderBlog = document.getElementById('ordenar-fecha');
 
-const noticiaTemplate = (data) => {/*data = [{title, url, content, date}, {}, {}]*/
-  let news = "";
-  for (let i = 0; i < data.length; i++) { /*recorre toda la data*/
+const noticiaTemplate = (data) => {/* data = [{title, url, content, date}, {}, {}]*/
+  let news = '';
+  for (let i = 0; i < data.length; i++) { /* recorre toda la data*/
     let item = `
       <div class="noticia">
         <h2><a href="${data[i].url}" target="_blank">${data[i].title}</a></h2>
@@ -21,13 +21,13 @@ const noticiaTemplate = (data) => {/*data = [{title, url, content, date}, {}, {}
 
 mostrarData.innerHTML = noticiaTemplate(nuevaData);
 
-/*funcion para el boton de filtrado*/
+/* funcion para el boton de filtrado*/
 
 const pintarGeneral = (boton, category) => {
   const btn = document.getElementById(boton);
-  btn.addEventListener("click", () => {
+  btn.addEventListener('click', () => {
     let nombre = steam.categorias(dataSteam);
-    let itemsHTML = "";
+    let itemsHTML = '';
     for (let i = 0; i < nombre[category].length; i++) {
       let item = `
           <div class="noticia">
@@ -38,68 +38,46 @@ const pintarGeneral = (boton, category) => {
           <p>${nombre[category][i].feedlabel}</p>-->
           </div>
           `;
-          itemsHTML += item
-
+      itemsHTML += item;
     }
     mostrarData.innerHTML = `<h1>${category} (${nombre[category].length})</h1>` + itemsHTML;
-
   });
-
 };
 
-pintarGeneral("btn-product", "producto");
-pintarGeneral("btn-gamer", "gamer");
-pintarGeneral("btn-euro", "euro");
-pintarGeneral("btn-blog", "blog");
-pintarGeneral("btn-rock", "rock");
+pintarGeneral('btn-product', 'producto');
+pintarGeneral('btn-gamer', 'gamer');
+pintarGeneral('btn-euro', 'euro');
+pintarGeneral('btn-blog', 'blog');
+pintarGeneral('btn-rock', 'rock');
 
-/*función llamando ordenado*/
+/* función llamando ordenado*/
 
-orderBlog.addEventListener("change", (event) => {
+orderBlog.addEventListener('change', (event) => {
   let valorBtn = event.target.value;
-  const fechasOrdenadas = ordenandoFechas(nuevaData, valorBtn); /*función ordenado*/
+  const fechasOrdenadas = ordenandoFechas(nuevaData, valorBtn); /* función ordenado*/
   mostrarData.innerHTML = noticiaTemplate(fechasOrdenadas);
-
 });
 
-/*función cálculo matemático*/
+/* función cálculo matemático*/
 
 const renderCategories = (elementId, categoriesFunction) => {
   const element = document.getElementById(elementId);
-  element.addEventListener("click", () => {
-
+  element.addEventListener('click', () => {
     const categoriesHTML = categoriesFunction.map((categoryObj) => `
     <li>${categoryObj.title}-${categoryObj.percentage}%</li>
-    `).join(" ")
-
+    `).join('');
     mostrarData.innerHTML = `<div><ul>${categoriesHTML}</ul></div>`;
   });
-
 };
 
-renderCategories("btnCategories", computeCategoryStats(dataSteam));
+renderCategories('btnCategories', computeCategoryStats(dataSteam));
 
 
-//Funcionalidad para mostrar el menú de categorías en pantallas pequeñas.
-const burger = document.getElementById("burger");
-const barraVertical = document.getElementById("barra-vertical");
+/* Funcionalidad para mostrar el menú de categorías en pantallas pequeñas.*/
 
-burger.addEventListener("click", () => {
-  barraVertical.classList.toggle("visible");
-})
+const burger = document.getElementById('burger');
+const barraVertical = document.getElementById('barra-vertical');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+burger.addEventListener('click', () => {
+  barraVertical.classList.toggle('visible');
+});

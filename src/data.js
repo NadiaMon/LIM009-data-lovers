@@ -1,96 +1,88 @@
-const dataSteam = STEAM.appnews.newsitems;
-
-/*nueva data para mostrar en primera pantalla*/
+/*  nueva data para mostrar en primera pantalla*/
 
 const dataMuestra = (data) => {
-    const arr = [];
-    for (let i = 0; i < data.length; i++) {
-        arr.push({
-            title: data[i].title, url: data[i].url, contents: data[i].contents,
-            date: new Date(data[i]["date"]*1000) 
-        });
-    }
-    return arr; 
-}
+  const arr = [];
+  for (let i = 0; i < data.length; i++) {
+    arr.push({
+      title: data[i].title, url: data[i].url, contents: data[i].contents,
+      date: new Date(data[i]['date'] * 1000) 
+    });
+  }
+  return arr; 
+};
 
-/*filtrado por categorías*/
+/*  filtrado por categorías*/
 
-const categorias = (data) => { /*data = [{ }, { }]*/
+const categorias = (data) => { /* [{}, {}]*/
+  const filtrado = {};
+  const productUpdate = data.filter((producto) => { /* filter por canales*/
+    return (producto.feedlabel === 'Product Update');
+  });
 
-    const filtrado = {};
+  filtrado.producto = productUpdate;
 
-    const productUpdate = data.filter((producto) => { /*filter por canales*/
-        return (producto.feedlabel === "Product Update");
-    })
+  const pcGamer = data.filter((gamer) => {
+    return (gamer.feedlabel === 'PC Gamer');
+  });
 
-    filtrado.producto = productUpdate;
+  filtrado.gamer = pcGamer;
 
-    const pcGamer = data.filter((gamer) => {
-        return (gamer.feedlabel === "PC Gamer");
-    })
+  const euroGamer = data.filter((euro) => {
+    return (euro.feedlabel === 'Eurogamer');
+  });
 
-    filtrado.gamer = pcGamer;
+  filtrado.euro = euroGamer;
 
-    const euroGamer = data.filter((euro) => {
-        return (euro.feedlabel === "Eurogamer");
-    })
+  const tfBlog = data.filter((blog) => {
+    return (blog.feedlabel === 'TF2 Blog');
+  });
 
-    filtrado.euro = euroGamer;
+  filtrado.blog = tfBlog;
 
-    const tfBlog = data.filter((blog) => {
-        return (blog.feedlabel === "TF2 Blog");
-    })
+  const rockPaperShotgun = data.filter((rock) => {
+    return (rock.feedlabel === 'Rock, Paper, Shotgun');
+  });
 
-    filtrado.blog = tfBlog;
+  filtrado.rock = rockPaperShotgun;
 
-    const rockPaperShotgun = data.filter((rock) => {
-        return (rock.feedlabel === "Rock, Paper, Shotgun");
-    })
+  return filtrado;
+};
 
-    filtrado.rock = rockPaperShotgun;
-
-        return filtrado;
-}
-
-console.log(categorias(dataSteam));
-
-/*función ordenando fechas*/
+/* función ordenando fechas*/
 
 const ordenandoFechas = (data, sortOrder) => {
-    const compare = (a, b) => {
-        return a['date'] - b['date']; /*ascendente*/
-    }
-    if (sortOrder === "ASC") {
-        return data.concat().sort(compare);
-         
-    }
-    else if (sortOrder === "DESC") {
-        return data.concat().sort(compare).reverse();
-    }
-}
+  const compare = (dateA, dateB) => {
+    return dateA['date'] - dateB['date']; /* ascendente*/
+  };
+  if (sortOrder === 'ASC') {
+    return data.concat().sort(compare);        
+  } else if (sortOrder === 'DESC') {
+    return data.concat().sort(compare).reverse();
+  }
+};
 
-/*función porcentajes*/
+/* función porcentajes*/
 
-const computePercentage = (part, total) => { /*porcentaje*/
-    return (part / total) * 100
-}
+const computePercentage = (part, total) => { /* porcentaje*/
+  return (part / total) * 100;
+};
 
-const computeCategoryStats = (data) => { /*porcentaje de filtrado*/
+const computeCategoryStats = (data) => { /* porcentaje de filtrado*/
   const categories = categorias(data);
   const stats = Object.keys(categories).map((category) => {
     return {
-        title: category,
-        percentage: computePercentage(categories[category].length, data.length)
-    }
-  })
- return stats;
-}
+      title: category,
+      percentage: computePercentage(categories[category].length, data.length)
+    };
+  });
+  return stats;
+};
+// return computeCategoryStats;
+// computeCategoryStats(dataSteam);
 
-computeCategoryStats(dataSteam);
-
-window.steam = {  /*objeto que contiene todos los métodos*/
-    dataMuestra: dataMuestra,
-    categorias: categorias,
-    ordenandoFechas: ordenandoFechas,
-    computeCategoryStats:computeCategoryStats
-}
+window.steam = { /* objeto que contiene todos los métodos*/
+  dataMuestra: dataMuestra,
+  categorias: categorias,
+  ordenandoFechas: ordenandoFechas,
+  computeCategoryStats: computeCategoryStats
+};
