@@ -5,7 +5,7 @@ const dataMuestra = (data) => {
   for (let i = 0; i < data.length; i++) {
     arr.push({
       title: data[i].title, url: data[i].url, contents: data[i].contents,
-      date: new Date(data[i]['date'] * 1000) 
+      date: data[i].date
     });
   }
   return arr; 
@@ -84,5 +84,6 @@ window.steam = { /* objeto que contiene todos los métodos*/
   dataMuestra: dataMuestra,
   categorias: categorias,
   ordenandoFechas: ordenandoFechas,
+  computePercentage: computePercentage,
   computeCategoryStats: computeCategoryStats
 };

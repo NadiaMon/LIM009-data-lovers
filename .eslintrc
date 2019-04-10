@@ -8,13 +8,7 @@
   "extends": "eslint:recommended",
   "globals": {
     "STEAM": false,
-    "steam": false,
-    "dataSteam": false,
-    "dataMuestra": false,
-    "categorias": false,
-    "ordenandoFechas": false,
-    "computePercentage": false,
-    "computeCategoryStats": false    
+    "steam": false  
   },
   "rules": {
     "allowTernary": true,
@@ -43,6 +37,7 @@
     "indent": [1, 2],
     "no-array-constructor": 1,
     "no-const-assign": "error",
-    "no-var": "error"
+    "no-var": "error",
+    "no-console": 0
   }
 }

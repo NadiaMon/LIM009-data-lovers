@@ -10,7 +10,7 @@ const noticiaTemplate = (data) => {/* data = [{title, url, content, date}, {}, {
       <div class="noticia">
         <h2><a href="${data[i].url}" target="_blank">${data[i].title}</a></h2>
         <p>${data[i].contents}</p>
-        <p class="fecha">${data[i].date}</p>
+        <p class="fecha">${new Date(data[i]['date'] * 1000)}</p>
       </div>
       `
       ;
@@ -54,7 +54,7 @@ pintarGeneral('btn-rock', 'rock');
 
 orderBlog.addEventListener('change', (event) => {
   let valorBtn = event.target.value;
-  const fechasOrdenadas = ordenandoFechas(nuevaData, valorBtn); /* función ordenado*/
+  const fechasOrdenadas = steam.ordenandoFechas(nuevaData, valorBtn); /* función ordenado*/
   mostrarData.innerHTML = noticiaTemplate(fechasOrdenadas);
 });
 
@@ -70,8 +70,7 @@ const renderCategories = (elementId, categoriesFunction) => {
   });
 };
 
-renderCategories('btnCategories', computeCategoryStats(dataSteam));
-
+renderCategories('btnCategories', steam.computeCategoryStats(dataSteam));
 
 /* Funcionalidad para mostrar el menú de categorías en pantallas pequeñas.*/
 
