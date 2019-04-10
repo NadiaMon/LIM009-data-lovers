@@ -54,10 +54,13 @@ const ordenandoFechas = (data, sortOrder) => {
   const compare = (dateA, dateB) => {
     return dateA['date'] - dateB['date']; /* ascendente*/
   };
+  const orderedData = data.concat().sort(compare);
   if (sortOrder === 'ASC') {
-    return data.concat().sort(compare);        
+    return orderedData;        
   } else if (sortOrder === 'DESC') {
-    return data.concat().sort(compare).reverse();
+    return orderedData.reverse();
+  } else {
+    return data;
   }
 };
 

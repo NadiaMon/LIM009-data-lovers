@@ -99,9 +99,6 @@ describe('categorias', () => {
   });
 });
 
-const sortOrderAsc = 'ASC';
-const sortOrderDesc = 'DESC';
-
 const output2 = [{
   gid: '2403126706534048982',
   title: 'All of Halloween is happening in TF2 s Scream Fortress X',
@@ -180,16 +177,19 @@ describe('ordenandoFechas', () => {
   it('debería ser una función', () => {
     expect(typeof steam.ordenandoFechas).toBe('function');
   });
-  it('debería retornar un array ordenando las noticias de forma ascendente ', () => {
-    expect(steam.ordenandoFechas(input1, sortOrderAsc)).toEqual(output2);
+  it('debería retornar un array ordenando las noticias de forma ascendente', () => {
+    expect(steam.ordenandoFechas(input1, 'ASC')).toEqual(output2);
   });
-  it('debería retornar un array ordenando las noticias de forma descendente ', () => {
-    expect(steam.ordenandoFechas(input1, sortOrderDesc)).toEqual(output3);
+  it('debería retornar un array ordenando las noticias de forma descendente', () => {
+    expect(steam.ordenandoFechas(input1, 'DESC')).toEqual(output3);
+  });
+  it('debería retornar el mismo array si no cumple con las condiciones', () => {
+    expect(steam.ordenandoFechas(input1)).toEqual(input1);
   });
 });
 
-const input4 = 25;
-const input5 = 100;
+const input2 = 25;
+const input3 = 100;
 const output4 = 25;
 
 describe('computePercentage', () => {
@@ -197,12 +197,17 @@ describe('computePercentage', () => {
     expect(typeof steam.computePercentage).toBe('function');
   });
   it('debería devolverme el porcentaje', () => {
-    expect(steam.computePercentage(input4, input5)).toEqual(output4);
+    expect(steam.computePercentage(input2, input3)).toEqual(output4);
   });
 });
 
+const output5 = [{title: 'producto', percentage: 0}, {title: 'gamer', percentage: 0}, {title: 'euro', percentage: 0}, {title: 'blog', percentage: 66.66666666666666}, {title: 'rock', percentage: 33.33333333333333}];
+
 describe('computeCategoryStats', () => {
   it('debería ser una función', () => {
-    expect(typeof steam.categorias).toBe('function');
+    expect(typeof steam.computeCategoryStats).toBe('function');
+  });
+  it('debería retornar un array', () => {
+    expect(Array.isArray(steam.computeCategoryStats(output5))).toBe(true);
   });
 });
