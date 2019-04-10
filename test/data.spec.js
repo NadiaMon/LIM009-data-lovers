@@ -164,4 +164,3 @@ describe('computeCategoryStats', () => {
     expect(typeof steam.categorias).toBe('function');
   });
 });
-
