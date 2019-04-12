@@ -13,7 +13,7 @@
 
 # ACERCA DE
 
-Steam es una plataforma de distribución digital, gestión digital de derechos, comunicaciones y servicios multijugador desarrollada por Valve Corporation. Es utilizada tanto por pequeños desarrolladores independientes como grandes corporaciones de software para la distribución de videojuegos y material multimedia relacionado. Además ofrece varias canales para la comunicación entre los miembros de la comunidad, un blog con noticias sobre actualizaciones, sobre la comunidad, la posibilidad de utilizar chat de voz en cualquier momento y actualizaciones automáticas para todos los juegos que ofrece, entre otros.
+Steam es una plataforma de distribución digital, gestión digital de derechos, comunicaciones y servicios multijugador desarrollada por Valve Corporation. Es utilizada tanto por pequeños desarrolladores independientes como grandes corporaciones de software para la distribución de videojuegos y material multimedia relacionado. Además ofrece varias canales para la comunicación entre los miembros de la comunidad, un blog con noticias sobre actualizaciones, sobre la comunidad, la posibilidad de utilizar chat de voz en cualquier momento y actualizaciones automáticas para todos los juegos que ofrece, entre otras opciones.
 
 ***
 
@@ -22,7 +22,7 @@ Steam es una plataforma de distribución digital, gestión digital de derechos, 
 En este proyecto **construirás una página web para visualizar un conjunto (set) de datos** que se adecúe a lo que descubras que tu usuario necesite.
 
 Como entregable final tendrás una página web que permita **visualizar la data, filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo o mel ínimo, etc).
+información aún más relevante para los usuarios (promedio, el valor máximo o el mínimo, etc).
 
 ***
 
@@ -51,7 +51,7 @@ o el acceso a la información está abierta a cualquier tipo de público interes
 
 ## Encuesta
 
-Realizamos una pequeña encuesta con personas dentro del rango de edad del público objetivo y que además fueran asiduos a la página o juegos de Steam.
+Realizamos una pequeña encuesta con personas dentro del rango de edad del público objetivo y que además fueran asiduas a la página o juegos de Steam.
 Entre las preguntas que realizamos, rescatamos estas:
 
 * ¿Con qué frecuencia visitas la página de STEAM?
@@ -64,7 +64,7 @@ Descubrimos que al menos una vez al mes, los usuarios suelen visitar la página.
 
 ![noticias](src/img/noticias.PNG)
 
-De los usuarios que visitan la página, un pequeño porcentaje no sabe qué existe una sección de Noticias, esto se debe a que encuentran la página desordenada, la infomación los confunde, les parece aburrida la navegación por lo que no deciden quedarse mucho tiempo. 
+De los usuarios que visitan la página, un pequeño porcentaje no sabe que existe una sección de Noticias, esto se debe a que encuentran la página desordenada, la infomación los confunde, les parece aburrida la navegación por lo que no deciden quedarse mucho tiempo. 
 
 * ¿Alguna vez visitaste esa sección?
 
@@ -76,11 +76,11 @@ La siguiente pregunta, para los usuarios que sabían de la existencia de la secc
 
 ![búsqueda](src/img/búsqueda.PNG)
 
-Al preguntar cómo suelen buscar la información, respondieron que se les haría fácil si fuera por categorías(etiquetas).
+Al preguntar cómo suelen buscar la información, respondieron que se les haría fácil si fuera por categorías.
 
 ## Historias de usuarios
 
-Para definir las historias de nuestros usuarios,decidimos enfocarnos en las necesidade de nuestro público objetivos, rescatar algunas de las respuestas brindadas en las encuestas y sumar comentarios que nos dejaron en esta misma encuesta.
+Para definir las historias de nuestros usuarios,decidimos enfocarnos en las necesidade de nuestro público objetivo, rescatar algunas de las respuestas brindadas en las encuestas y sumar comentarios que nos dejaron en esta misma encuesta.
 
 En base a todo esto, formulamos las siguientes historias:
 
@@ -131,7 +131,7 @@ En base a las historias de usuarios se creó un primer prototipo, de baja fideli
 
 *Primer testeo*
 
-La primera foto es un sketch rápido de lo que sería el primer prototipo. Cuando testeamos este prototipo, nos dimos cuenta que no era intuitivo para todos ellos. Algunos pensaban que aún estaban en la página principal, la imagen banner les parecía lo principal y no las noticias. No entendían muy bien los botones de categorías. Confundían las categorías con las etiquetas y les el menú de archivo, a muchos les parecía demás porque no solían buscar la información de esa manera.
+La primera foto es un sketch rápido de lo que sería el primer prototipo. Cuando testeamos este prototipo, nos dimos cuenta que no era intuitivo para todos ellos. Algunos pensaban que todavía se encontraban en la página principal, ya que la imagen del banner les parecía lo principal y no las noticias. No entendían muy bien los botones de categorías, estas los confundían. Además el menú de archivo, a muchos les parecía algo que estaba demás, porque no solían buscar la información de esa manera.
 
 ![prototipo2](src/img/prototipodos.png)
 
