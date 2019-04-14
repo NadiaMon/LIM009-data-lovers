@@ -143,7 +143,7 @@ En este caso, los usuarios podían identificar el menú de las noticias, era un 
 
 Se definieron los colores a usarse, teniendo en cuenta la página principal de Steam y se propuso una tipografía sans serif, para mantener la legibilidad.
 
-![guiadeestilo](src/img/guia-de-estilo.png)
+![color&tipografia](src/img/color-tipografia.png)
 
 # Prototipo de Alta Fidelidad
 
